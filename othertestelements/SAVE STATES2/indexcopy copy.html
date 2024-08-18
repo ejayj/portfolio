@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <style>
+        html {
+            background-color: rgb(219, 224, 230);
+            /* favorite color */
+            overflow: hidden;
+            /*scroll down when you click a button? lock scroll? */
+            cursor: url("mouseicon.png"), auto;
+            /* custom cursor */
+            cursor: url("mouseicon.png"), pointer;
+            /* custom cursor */
+            /* pointer-events: none; cursor: pointer; */
+
+        }
+
+        .button2 {
+            cursor: none;
+        }
+
+        .test {
+
+            border: 2px solid black;
+            border-radius: 5px;
+            color: black;
+            padding: 14px 28px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            border-color: #2196F3;
+            color: dodgerblue;
+            /*transition: width 2s;*/
+            transition: scale 0.5s;
+            cursor: none;
+            background-color: transparent;
+
+            padding: 20px;
+
+        }
+
+
+        .test:hover {
+            /* transform: scale(2.05); */
+            scale: 1.10;
+        }
+
+        .center {
+            /* center to screen */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 100vh;
+            bottom: 0%;
+        }
+
+        .container {
+            /* height: 200px; */
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            bottom: 0%;
+        }
+
+        .hi {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 30em;
+            height: 18em;
+            margin-top: -9em;
+            /*set to a negative number 1/2 of your height*/
+            margin-left: -15em;
+            /*set to a negative number 1/2 of your width*/
+            /* border: 1px solid #ccc;
+            background-color: #f3f3f3; */
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="container center"> -->
+    <div class="hi">
+        <button class="test button2">Test1</button>
+        <button class="test button2">Test2</button>
+        <button class="test button2">Test3</button>
+        <button class="test button2">Test4</button>
+    </div>
+
+    <script>
+        //new idea:
+        //scrolling image that fades into the next one like the htmlup eventually template
+        //buttons using css transition that enlarge as you scroll over them, or get bigger as you tap on it on iphone
+        //as you scroll over each button, in javascript what you are scrolling over is changed by background
+
+        //add different mouse animation
+
+        //the pages themself will be fairly static, with maybe a carosel for the projects and a different hover animation
+        //and an animation for projects on click
+
+        //then a list of my skills/known languages fading in like that one htmlup hyperspace template
+
+        //the words "emmanuel johnson" will fade up also like the landing page on the htmlup hyperspace template
+        //the projects fadde in or about me fade in like the blue area of the hyperspacwe template? and then carosel? or maybe see more in projectS? or maybe make it about me?
+        //my skills pop in like the pink section
+
+        //contact me at bottom like framer stuff
+        //hire me and myr esume section
+
+        //we are stealing the animations from them. the actually website will be founded on pop ups or
+        //on click the whole page changes and background changes to a new page, with a big x to go back button on top right? or a left facing arrow
+
+    </script>
+
+</body>
+
+</html>

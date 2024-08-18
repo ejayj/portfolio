@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+            cursor: url("mouseicon.png"), auto; /* custom cursor */
+            cursor: url("mouseicon.png"), pointer; /* custom cursor */
+            /* pointer-events: none; cursor: pointer; */
+            
+        }
+
+        .button2 {
+            cursor: none; 
+        }
+
+        .bg {
+            /* The image used */
+            background-image: url("img1.jpeg");
+
+            /* Full height */
+            height: 100%;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            /* The transition used */
+            transition: background-image 0.5s;
+            /* was '-webkit-transition:' */
+        }
+
+        .bg:hover {
+            background-image: none;
+        }
+
+
+        /* The dots/bullets/indicators */
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        /* ********* */
+        /* Fading animation */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+            .text {
+                font-size: 11px
+            }
+        }
+
+        /* mouse click animation*/
+
+        .animate {
+            background-color: white;
+            position: relative;
+            height: 50px;
+            width: 59px;
+            animation-name: mousein;
+            animation-duration: 0.4s;
+            animation-fill-mode: forwards;
+        }
+
+
+        /*To play when you hold on left click*/
+
+        @keyframes mousein {
+            0% {
+                rotate: 0deg;
+            }
+
+            100% {
+                rotate: var(--mousein);
+            }
+
+            /*to hold when the animation has finished but you dont release*/
+        }
+
+
+        /* to be played when the mouse is let go of */
+
+        @keyframes mouseout {
+            0% {
+                rotate: var(--mousein);
+            }
+
+            100% {
+                rotate: 0deg;
+            }
+        }
+
+        /*button click thing*/
+        .classname {
+            -webkit-animation-name: cssAnimation;
+            -webkit-animation-duration: 3s;
+            -webkit-animation-iteration-count: 1;
+            -webkit-animation-timing-function: ease;
+            -webkit-animation-fill-mode: forwards;
+        }
+
+        @-webkit-keyframes cssAnimation {
+            from {
+                -webkit-transform: rotate(0deg) scale(1) skew(0deg) translate(100px);
+            }
+
+            to {
+                -webkit-transform: rotate(0deg) scale(2) skew(0deg) translate(100px);
+            }
+        }
+
+        .test {
+            
+            border: 2px solid black;
+            border-radius: 5px;
+            color: black;
+            padding: 14px 28px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            border-color: #2196F3;
+            color: dodgerblue;
+                /*transition: width 2s;*/
+            transition: scale 0.5s;
+            cursor: none; 
+        }
+
+
+        .test:hover {
+            /* transform: scale(2.05); */
+            scale: 1.50;
+        }
+
+        .test2 {
+            width: 60px;
+            height: 40px;
+            background: #92B901;
+            color: #ffffff;
+            position: absolute;
+            font-weight: bold;
+            font-size: 15px;
+            padding: 10px;
+            float: left;
+            margin: 5px;
+            -webkit-transition: -webkit-transform 1s, opacity 1s, background 1s, width 1s, height 1s, font-size 1s;
+            -webkit-border-radius: 5px;
+            -o-transition-property: width, height, -o-transform, background, font-size, opacity;
+            -o-transition-duration: 1s, 1s, 1s, 1s, 1s, 1s;
+            -moz-transition-property: width, height, -o-transform, background, font-size, opacity;
+            -moz-transition-duration: 1s, 1s, 1s, 1s, 1s, 1s;
+            transition-property: width, height, transform, background, font-size, opacity;
+            transition-duration: 1s, 1s, 1s, 1s, 1s, 1s;
+            border-radius: 5px;
+            opacity: 0.4;
+        }
+
+        .test2:hover {
+            opacity: 1;
+            background: #1ec7e6;
+            width: 130px;
+            height: 80px;
+            font-size: 35px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bg element" id="0">
+
+        <div class="animate">
+        </div>
+        <input name="" type="button" onclick="ani()" value="Click">
+        <img id="img" src="stock.png" width="328" height="328" />
+        <button class="button2 button is-link is-outlined is-hovered test">Outlined</button>
+        <button class="test2 button2" onclick="alert('hi')">hiiii</button>
+        <button class="test button2">Test2</button>
+
+        <div style="text-align:center; bottom:5%; position:absolute; width:100%;" id="dots"> </div>
+        <br>
+
+    </div>
+    <script>
+        const images = ["url(img1.jpeg)", "url(img2.jpeg)", "url(img7.jpeg)"]; //array of img files
+
+        dots(); //automatically display dots from amount of images in array
+        slideshow(); //automatically animate slideshow and dots for each image in array
+
+        //array to make dots appear?
+        function dots() {
+            let dots = document.getElementById("dots");
+            let spans = '';
+            let i;
+
+            for (i = 0; i < images.length; i++) {
+                spans += '<span class="dot" id="dot' + i + '"></span>';
+            }
+            //alert(spans)
+            dots.innerHTML = spans; //change innner html
+        }
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+
+        function slideshow() {
+
+            //get background element
+            let bg_temp = document.getElementsByClassName("bg");
+            let background = bg_temp[0];
+            let index = background.id; //get current image index/id
+            let dots = document.getElementsByClassName("dot"); //get dots
+
+            if (index == images.length) {
+                //reset image index to 0;
+                background.id == 0;
+                index = 0;
+                background.style.backgroundImage = images[0]; //set image to index //change image
+
+                //reset all dots
+                for (i = 0; i < dots.length; i++) {
+                    //reset all dots to "off/inactive" color
+                    dots[i].style.backgroundColor = "rgb(187, 187, 187)"; //off-white color
+                }
+
+                dots[index].style.backgroundColor = "rgb(113, 113, 113)"; //dark-grey color
+
+            } else {
+                //change image
+                background.style.backgroundImage = images[index]; //set image to index; can also do document.getElementById("body")
+
+                //dots
+
+                let i;
+
+                //reset all dots
+                for (i = 0; i < dots.length; i++) {
+                    //reset all dots to "off/inactive" color
+                    dots[i].style.backgroundColor = "rgb(187, 187, 187)"; //off-white color
+                }
+
+                //activate the correct dot
+                dots[index].style.backgroundColor = "rgb(113, 113, 113)"; //dark-grey color
+            }
+
+            index++; //go to next image
+            background.id = index;
+
+            setTimeout(slideshow, 4000); // Change image every 2 seconds
+        }
+
+        //todo
+        //work on transitions
+        //style dots transitions at the end
+
+        //more stuff
+
+
+        //mouse click animation
+
+        // i did not include the use of a variable to track states as setProperty
+        // and the very eventListener does that for this example... this can easily be reimplemented
+        var mouseIsDown = false;
+
+        // pass in the varaible name and value, since they
+        // are the finish of in and start of out, their 
+        // values can be the same value at the same time so only
+        // one variable is needed to manipulate both keyframe animations
+        // set the css variable value initially
+        document.documentElement.style.setProperty('--mousein', '0deg')
+
+        // the event listener for mousedown
+        window.addEventListener('mousedown', function () {
+            // set the mousein variable to 45deg
+            document.documentElement.style.setProperty('--mousein', '45deg')
+        });
+
+        window.addEventListener('mouseup', function () {
+            // set the mousein variable to 0deg
+            document.documentElement.style.setProperty('--mousein', '0deg')
+        });
+
+
+        //chang element on button click thing
+        function ani() {
+            document.getElementById('img').className = 'classname';
+        }
+
+
+
+        //new idea:
+        //scrolling image that fades into the next one like the htmlup eventually template
+        //buttons using css transition that enlarge as you scroll over them, or get bigger as you tap on it on iphone
+        //as you scroll over each button, in javascript what you are scrolling over is changed by background
+
+        //add different mouse animation
+
+        //the pages themself will be fairly static, with maybe a carosel for the projects and a different hover animation
+        //and an animation for projects on click
+
+        //then a list of my skills/known languages fading in like that one htmlup hyperspace template
+
+        //the words "emmanuel johnson" will fade up also like the landing page on the htmlup hyperspace template
+        //the projects fadde in or about me fade in like the blue area of the hyperspacwe template? and then carosel? or maybe see more in projectS? or maybe make it about me?
+        //my skills pop in like the pink section
+
+        //contact me at bottom like framer stuff
+        //hire me and myr esume section
+
+        //we are stealing the animations from them. the actually website will be founded on pop ups or
+        //on click the whole page changes and background changes to a new page, with a big x to go back button on top right? or a left facing arrow
+
+    </script>
+
+</body>
+
+</html>

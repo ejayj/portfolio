@@ -1,0 +1,21 @@
+body {
+    background-color: rgb(10, 10, 10);
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url("bg.jpg");
+    background-size: 100vw 100vh;
+}
+
+#container {
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+}
