@@ -205,6 +205,23 @@
         }
 
         @import url(https://fonts.googleapis.com/css?family=Share+Tech+Mono);
+
+        .fade {
+            animation: fadeInAnimation ease 2s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+        
     </style>
 </head>
 
@@ -249,11 +266,11 @@
 
                         <br>
 
-                        <div class="columns is-centered is-1">
+                        <div class="columns is-centered is-1 fade">
                             <div class="column"><button class="button2">About</button></div>
                             <div class="column"><button class="button2">Projects</button></div>
                             <div class="column"><button class="button2">Work</button></div>
-                            <div class="column"><button class="button2">About</button></div>
+                            <div class="column"><button class="button2">Contact</button></div>
                         </div>
                     </div>
 

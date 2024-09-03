@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <style>
+        html {
+            background-color: rgb(219, 224, 230);
+            background-image: url("bg.jpg");
+            /* url("img7.jpeg"); */
+            background-size: cover;
+
+
+            /* filter: blur(10px);
+            -webkit-filter: blur(25px);  */
+
+            /* z-index: 1; */
+
+            /* Full height */
+            height: 100%;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+
+
+            /* favorite color */
+            overflow: hidden;
+            /*scroll down when you click a button? lock scroll? */
+            cursor: url("mouseicon.png"), auto;
+            /* custom cursor */
+            cursor: url("mouseicon.png"), pointer;
+            /* custom cursor */
+            /* pointer-events: none; cursor: pointer; */
+
+        }
+
+        .bg-image {
+            background-color: rgb(219, 224, 230);
+            background-image: url("bg.jpg");
+            background-size: cover;
+
+
+            /* filter: blur(10px);
+            -webkit-filter: blur(25px);  */
+
+            /* z-index: 1; */
+
+            /* Full height */
+            height: 100%;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .button2 {
+            border: 2px solid black;
+            border-radius: 5px;
+            color: black;
+            padding: 14px 28px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+
+            /* background: -webkit-linear-gradient(25deg, #eee, #898585); */
+            border-image: linear-gradient(to right, #eee 0%, #898585 100%) 1;
+            border-radius: 5px;
+            /* this doesn't work 
+            border-width: 4px;
+            border-style: solid;
+            
+            /* dodgerblue; */
+
+
+            /*transition: width 2s;*/
+            transition: scale 0.5s;
+            cursor: none;
+            background-color: transparent;
+
+            padding: 10px;
+            width: 10vw;
+            scale: 1.0;
+            cursor: none;
+        }
+
+
+        .button2:hover {
+            /* transform: scale(2.05); */
+            scale: 1.10;
+        }
+
+        .textgradient {
+            /* color: -webkit-linear-gradient(25deg, #eee, #898585); */
+            background: -webkit-linear-gradient(25deg, #eee, #898585);
+            /* linear-gradient(#eee, #898585); */
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .typewriter {
+            overflow: hidden;
+            /* Ensures the content is not revealed until the animation */
+            border-right: .15em solid white;
+            /* The typwriter cursor */
+            white-space: nowrap;
+            /* Keeps the content on a single line */
+            margin: 0 auto;
+            /* Gives that scrolling effect as the typing happens */
+            font-weight: 200;
+            letter-spacing: .15em;
+            /* Adjust as needed */
+            width: max-content;
+            animation:
+                typing 3.5s steps(70, end),
+                blink-caret .5s step-end infinite;
+        }
+
+        /* The typing effect */
+        @keyframes typing {
+            from {
+                width: 0
+            }
+
+            to {
+                width: 50ch
+            }
+        }
+
+        /* The typewriter cursor effect */
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent
+            }
+
+            50% {
+                border-color: white
+            }
+
+        }
+
+        .decode-text {
+            width: 100%;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .space {
+            display: inline-block;
+            width: 10px;
+        }
+
+        .text-animation {
+            display: inline-block;
+            position: relative;
+            color: transparent;
+            text-transform: uppercase;
+
+            &:before {
+                content: "";
+                color: black;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                background: #0e182d;
+                width: 0;
+                height: 1.2em;
+                -webkit-transform: translate(-50%, -55%);
+                -ms-transform: translate(-50%, -55%);
+                transform: translate(-50%, -55%);
+            }
+
+            &.state-1 {
+                &:before {
+                    width: 1px;
+                }
+            }
+
+            &.state-2 {
+                &:before {
+                    width: 0.9em;
+                }
+            }
+
+            &.state-3 {
+                color: black;
+
+                &:before {
+                    width: 0;
+                }
+            }
+        }
+
+
+        #refresh {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+        }
+
+        @import url(https://fonts.googleapis.com/css?family=Share+Tech+Mono);
+
+        .fade {
+            animation: fadeInAnimation ease 2s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+        
+    </style>
+</head>
+
+<body class="bg-animation">
+
+    <section class="hero is-fullheight" style="z-index: 2;"> <!-- background; can I have mutliple sections?-->
+        <div class="hero-body"> <!---- style="background-color: blue;"> // container is-fullhd-->
+            <div class="container has-text-centered">
+
+
+                <div class="columns pt-6 mt-6">
+                    <div class="column"></div> <!-- spacing -->
+
+
+                    <!-- center content -->
+                    <div class="column is-three-fifths content has-text-centered is-mobile">
+                        <!--style="background-color: blue;"> -->
+
+                        <br>
+
+                        <div class="decode-text" style="font-weight: 500;" onclick="decodeText();">
+                            <div class="text-animation">E</div>
+                            <div class="text-animation">M</div>
+                            <div class="text-animation">M</div>
+                            <div class="text-animation">A</div>
+                            <div class="text-animation">N</div>
+                            <div class="text-animation">U</div>
+                            <div class="text-animation">E</div>
+                            <div class="text-animation">L</div>
+                            <div class="space"></div>
+
+                            <div class="text-animation">J</div>
+                            <div class="text-animation">O</div>
+                            <div class="text-animation">H</div>
+                            <div class="text-animation">N</div>
+                            <div class="text-animation">S</div>
+                            <div class="text-animation">O</div>
+                            <div class="text-animation">N</div>
+                        </div>
+                        <p class="subtitle is-5 typewriter" style="color: white; "> Back-end Developer, Software
+                            Engineer, Student.</p>
+
+                        <br>
+
+                        <div class="columns is-centered is-1 fade">
+                            <div class="column"><button class="button2">About</button></div>
+                            <div class="column"><button class="button2">Projects</button></div>
+                            <div class="column"><button class="button2">Work</button></div>
+                            <div class="column"><button class="button2">Contact</button></div>
+                        </div>
+                    </div>
+
+                    <div class="column"></div> <!-- spacing -->
+                </div>
+            </div>
+        </div>
+
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+        <div id="stars4"></div>
+    </section>
+
+    <script>
+        /* ------------------------------------------------------------------------ *  
+4 states per letter: Transparent | Line | Block | Visible.
+These states are shuffled for a unique "decode" effect each time.
+* ------------------------------------------------------------------------ */
+
+        function decodeText() {
+            var text = document.getElementsByClassName('decode-text')[0];
+            // debug with
+            // console.log(text, text.children.length);
+
+            // assign the placeholder array its places
+            var state = [];
+            for (var i = 0, j = text.children.length; i < j; i++) {
+                text.children[i].classList.remove('state-1', 'state-2', 'state-3');
+                state[i] = i;
+            }
+
+            // shuffle the array to get new sequences each time
+            var shuffled = shuffle(state);
+
+            for (var i = 0, j = shuffled.length; i < j; i++) {
+                var child = text.children[shuffled[i]];
+                classes = child.classList;
+
+                // fire the first one at random times
+                var state1Time = Math.round(Math.random() * (2000 - 300)) + 50;
+                if (classes.contains('text-animation')) {
+                    setTimeout(firstStages.bind(null, child), state1Time);
+                }
+            }
+        }
+
+        // send the node for later .state changes
+        function firstStages(child) {
+            if (child.classList.contains('state-2')) {
+                child.classList.add('state-3');
+            } else if (child.classList.contains('state-1')) {
+                child.classList.add('state-2')
+            } else if (!child.classList.contains('state-1')) {
+                child.classList.add('state-1');
+                setTimeout(secondStages.bind(null, child), 100);
+            }
+        }
+        function secondStages(child) {
+            if (child.classList.contains('state-1')) {
+                child.classList.add('state-2')
+                setTimeout(thirdStages.bind(null, child), 100);
+            }
+            else if (!child.classList.contains('state-1')) {
+                child.classList.add('state-1')
+            }
+        }
+        function thirdStages(child) {
+            if (child.classList.contains('state-2')) {
+                child.classList.add('state-3')
+            }
+        }
+
+        function shuffle(array) {
+            var currentIndex = array.length, temporaryValue, randomIndex;
+
+            // While there remain elements to shuffle...
+            while (0 !== currentIndex) {
+                // Pick a remaining element...
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex -= 1;
+
+                // And swap it with the current element.
+                temporaryValue = array[currentIndex];
+                array[currentIndex] = array[randomIndex];
+                array[randomIndex] = temporaryValue;
+            }
+            return array;
+        }
+
+
+        // Demo only stuff
+        decodeText();
+
+        // beware: refresh button can overlap this timer and cause state mixups
+        setInterval(function () { decodeText(); }, 10000);
+
+
+        //new idea:
+        //scrolling image that fades into the next one like the htmlup eventually template
+        //buttons using css transition that enlarge as you scroll over them, or get bigger as you tap on it on iphone
+        //as you scroll over each button, in javascript what you are scrolling over is changed by background
+
+        //add different mouse animation
+
+        //the pages themself will be fairly static, with maybe a carosel for the projects and a different hover animation
+        //and an animation for projects on click
+
+        //then a list of my skills/known languages fading in like that one htmlup hyperspace template
+
+        //the words "emmanuel johnson" will fade up also like the landing page on the htmlup hyperspace template
+        //the projects fadde in or about me fade in like the blue area of the hyperspacwe template? and then carosel? or maybe see more in projectS? or maybe make it about me?
+        //my skills pop in like the pink section
+
+        //contact me at bottom like framer stuff
+        //hire me and myr esume section
+
+        //we are stealing the animations from them. the actually website will be founded on pop ups or
+        //on click the whole page changes and background changes to a new page, with a big x to go back button on top right? or a left facing arrow
+
+    </script>
+</body>
+
+</html>

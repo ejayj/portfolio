@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+   <title>Happy rising text</title>
+
+   <style type="text/css">
+       #up{
+           text-align: center;
+
+           /*This is needed.*/
+           position: absolute;
+           top: 30%;
+           transition: all 1s ease-out;
+       }
+    </style>
+</head>
+<body onload="floatUp()">
+   <header id="yourHtmlTag">Float Up!</header>
+
+<!-- The script needs to be below where it is called -->
+<script type="text/javascript">
+   function floatUp(){
+       document.getElementById('yourHtmlTag').style.top = "15%";
+   }
+</script>
+</body>
