@@ -3,15 +3,8 @@
 
   <head>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!-- <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no"> -->
-
       <link rel="stylesheet" href="styles.css">
       <script src="script.js"></script>
-      <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-      <script src="https://kit.fontawesome.com/44366af3cb.js" crossorigin="anonymous"></script>
-
-            <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-          
   </head>
 
   <script> //******************* MY NOTES****************
@@ -61,87 +54,64 @@
   </script>
 
   <body class="container1">
+
+      <!-- Scroll To Top Button 
+      <button id=""> <a href="#section1">
+           <i class=""id="scrollTop"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-home"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l-2 0l9 -9l9 9l-2 0" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg></i>
+           </a>
+      </button>-->
       <!-- START LANDING PAGE -->
       <h1 id="section1">
-        <!-- Links Button  -->
-           <a target="_blank" rel="noopener noreferrer" href="https://github.com/ejayj"><i class="icon is-medium fas fab fa-github has-text-dark fa-border" id="float_a"></i><!-- <i class="fab fa-github has-text-dark" id="float_a"></i> --></a>
-           <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/emmanuel-c-johnson/"><i class="icon is-medium fas fab fa-brands fa-linkedin has-text-link-soft fa-border" id="float_b"></i></a>
-           <a target="_blank" rel="noopener noreferrer" href="myresume.pdf"><i class="icon is-medium fas fa-solid fa-regular has-text-white fa-file-pdf fa-border" id="float_c"></i></a>
-           <a href="mailto:ejayleaf@gmail.com"><i class="icon is-medium fas fa-solid fa-envelope has-text-grey-light fa-border" id="float_d"></i></a>
-            <a href="#section1"><span class="has-text-grey fa-stack fa-medium fas-fw" id="float_home">
-              <i class="fa-regular fa-circle fa-stack-2x"></i>
-              <i class="fa-solid fa-house fa-stack-1x fa-bounce"></i>
-            </span></a>
-
-        <img id="scrollDown" class="is-hidden-mobile" src="animation.gif"/>
-      <!-- scroll down -->
-          <!-- <img id="scrollDown" src="animation.gif"/> -->
          <section > <!-- this keeps buttons from stretching out too much -->
               <div class="container is-fullhd has-text-centered"> 
 
                       <!-- center content -->
-                      <div class="columns content has-text-centered is-mobile is-centered is-multiline" >
-                          <img class="profileicon image is-128x128 is-centered has-text-centered" style="justify-content: center;" src="image.png">
+                      <div class="column content has-text-centered is-mobile" >
+                          <img src="image.png" style="width: 200px; height: 200px; border-radius: 20%;">
                           <br>
 
-                          <div class="column is-full is-gapless is-narrow is-centered">
-                              <div class="decode-text" style="font-weight: 500;" onclick="decodeText();">
-                                <div class="text-animation">E</div>
-                                <div class="text-animation">M</div>
-                                <div class="text-animation">M</div>
-                                <div class="text-animation">A</div>
-                                <div class="text-animation">N</div>
-                                <div class="text-animation">U</div>
-                                <div class="text-animation">E</div>
-                                <div class="text-animation">L</div>
-                                <div class="space is-hidden-mobile"></div> <!-- space -->
-                                <div class="is-hidden-tablet"></div> <!-- space break point, mobile only -->
+                          <div class="decode-text" style="font-weight: 500;" onclick="decodeText();">
+                              <div class="text-animation">E</div>
+                              <div class="text-animation">M</div>
+                              <div class="text-animation">M</div>
+                              <div class="text-animation">A</div>
+                              <div class="text-animation">N</div>
+                              <div class="text-animation">U</div>
+                              <div class="text-animation">E</div>
+                              <div class="text-animation">L</div>
+                              <div class="space"></div>
 
-                                <div class="text-animation">J</div>
-                                <div class="text-animation">O</div>
-                                <div class="text-animation">H</div>
-                                <div class="text-animation">N</div>
-                                <div class="text-animation">S</div>
-                                <div class="text-animation">O</div>
-                                <div class="text-animation">N</div>
-                              </div>
-                          
-                            <p class=" subtitle is-6 typewriter" style="color: white; "> Full-Stack Dev, Software Engineer.</p>
-                          
+                              <div class="text-animation">J</div>
+                              <div class="text-animation">O</div>
+                              <div class="text-animation">H</div>
+                              <div class="text-animation">N</div>
+                              <div class="text-animation">S</div>
+                              <div class="text-animation">O</div>
+                              <div class="text-animation">N</div>
                           </div>
 
-                          
-                            <!-- <p class="subtitle is-6 typewriter" style="color: white; ">I build things for the web.</p> -->
-                         
-                           <div class="column is-full is-centered is-hidden-mobile"> <!-- resume button hides on mobile do to resizing issues-->
-                          <div class="columns is-full is-narrow is-centered has-text-centered">
-                            <div class="column is-one-third is-3-mobile is-narrow is-centered has-text-centered has-text-weight-bold" style="text-align: center;"><a target="_blank" rel="noopener noreferrer" href="myresume.pdf"><button class="button is-warning is-light is-rounded is-responsive is-outlined is-responsive is-medium is-fullwidth" style="background-color: rgb(244,186,67, .1)" >Resume</button></a></div> <!-- style="font-weight: 90px; background-color: rgb(244,186,67, .1)"-->
-                          </div>
-                          </div>
-                         
-                          <div class="columns is-centered is-full fade" > 
-                              <div class="column is-narrow is-centered has-text-centered is-hidden-tablet" style="text-align: center;"><a target="_blank" rel="noopener noreferrer" href="myresume.pdf"><button class="button is-warning is-light is-rounded is-responsive is-outlined is-responsive is-large is-fullwidth">Resume</button></a></div> <!-- resume button is large, and shows up only on mobile due to resizing issues-->
-                              <div class="column has-text-centered" style="text-align: center;"><a href="#section2"><button class="button2">About</button></a></div>
-                              <div class="column has-text-centered" style="text-align: center;"><a href="#section3"><button class="button2">Work</button></a></div>
-                              
-                              <div class="column has-text-centered" style="text-align: center;"><a href="#section4"><button class="button2">Projects</button></a></div>
-                              <div class="column has-text-centered" style="text-align: center;"><a href="#section5"><button class="button2">Contact</button></a></div>
-                          </div>
-                          
+                          <div class="columns is-centered fade"> <p class="subtitle is-5 typewriter" style="color: white; "> Full-Stack Dev, Software Engineer.</p></div>
+                          <!-- mainly backend -->
+                          <div class="columns is-centered is-full fade" >
 
-                          
+                            <!-- on smaller screen make buttons widerand make textnot overfill button-->
+                              <div class="column"><a href="#section2"><button class="button2">About</button></a></div>
+                              <div class="column"><a href="#section3"><button class="button2">Projects</button></a></div>
+                              <div class="column"><a href="#section4"><button class="button2">Work</button></a></div>
+                              <div class="column"><a href="#section5"><button class="button2">Contact</button></a></div>
+                          </div>
                       </div>
-                      
               </div>
           <div id="stars"></div>
           <div id="stars2"></div>
           <div id="stars3"></div>
           <div id="stars4"></div>
 
-          
-          
+          <!-- scroll down button-->
+          <button id="autoScrollBtn" type="button" onClick="document.getElementById('middle').scrollIntoView();">
+           <i class="" id="scrollDown">Scroll</i>
+          </button>
         </section>
-        
       </h1>
     <!-- END LANDING PAGE -->
      <script>
@@ -177,281 +147,35 @@
   });
 </script>
     <!-- START ABOUT PAGE-->
-      <h1 id="section2" class="hero is-fullheight" style="background-color: rgba(255, 157, 0, 0.1)">
-      <div class="hero-body"> <!-- is-flex is-justify-content-center is-align-items-center -->
+      <h1 id="section2" style="background-color: rgba(255, 157, 0, 0.2)">
 
-        <div class="container is-centered has-text-centered">
-          <!-- <img src="image2.png" style="width: 200px; height: 200px; border-radius: 20%;" height="100" width="100"> -->
-          <div class="columns is-multiline is-full is-centered is-vcentered has-text-centered">
-              
-              <!-- Photo/gif, and some exp/title-->
-              <div class="column is-full is-centered">
-                <div class="columns is-full is-centered">
-                  <div class="column is-half is-centered is-narrow">
-                    <div class="crop">
-                    <img src="orangesquiggle.gif" style="transform: scaleX(-1); object-fit: cover; margin: -75px 0 0 -100px;" width="400px" height="300px" />
-                    </div>
-                  </div>  
-                  <div class="column is-half is-narrow">
-                    
-                  </div>    
-                </div>
-              </div>
-             
-
-
+        <div class="container has-text-centered">
+          <div class="column is-centered content has-text-centered is-mobile"><img src="image2.png" style="width: 200px; height: 200px; border-radius: 20%;"></div>
           <div class="columns is-centered is-full">
+          
+            <div class="column is-centered">
+              <p class="title has-text-white">About Me</p>
+            </div>
             <div class="column is-centered is-full">
-              <p class="title has-text-white has-text-left">About Me</p>
-              <p class="subtitle has-text-white"> Note where I'm from, college, new grad, exp, skills, etc. In Congress, July 4, 1776 The unanimous Declaration of the thirteen united States of America, When in the Course of human events, it becomes necessary for one people to dissolve the political bands which have connected them with another, and to assume among the powers of the earth, the separate and equal station to which the Laws of Nature and of Nature's God entitle them, a decent respect to the opinions of mankind requires that they should declare the causes which impel them to the separation.</p>
+              <p class="subtitle has-text-white"> In Congress, July 4, 1776
+
+The unanimous Declaration of the thirteen united States of America, When in the Course of human events, it becomes necessary for one people to dissolve the political bands which have connected them with another, and to assume among the powers of the earth, the separate and equal station to which the Laws of Nature and of Nature's God entitle them, a decent respect to the opinions of mankind requires that they should declare the causes which impel them to the separation.
+
+We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes d
+</p>
             </div>
             <!-- <div class="column is-8 has-text-centered">
               <p class="title has-text-white">About Me</p>
               <p class="subtitle has-text-white">I am a Full-Stack Developer with a passion for creating dynamic and responsive web applications. I have experience in both front-end and back-end development, and I enjoy working with modern technologies to build efficient and scalable solutions.</p>
             </div> -->
+
           </div>
-          <!-- educstion -->
-            <div class="columns is-centered is-full is-multiline is-centered is-gapless is-mobile">
-              
-                <div class="columns is-full is-multiline is-centered is-gapless is-mobile">
-                <div class="column is-full"><p class="title has-text-white has-text-centered">Skills</p></div> 
-
-                <div class="columns is-mobile is-multiline is-centered">
-                  
-                  <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg" height="50" width="50"/></div>
-                  <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg" height="50" width="50" /> </div>
-
-                  
-                  <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-plain.svg" height="50" width="50"/></div>
-                  <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" height="50" width="50"/></div>
-                  <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" height="50" width="50"/></div>
-                  <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pyscript/pyscript-original-wordmark.svg" height="50" width="50"/></div>
-                  <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg" height="50" width="50"/></div>
-                  <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg" height="50" width="50"/></div>
-                  <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original-wordmark.svg" height="50" width="50"/></div>
-
-                  <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg" height="50" width="50"/></div>
-                  <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg" height="50" width="50"/></div>
-                  <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg" height="50" width="50"/></div>
-                  <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original-wordmark.svg" height="50" width="50"/></div>
-                  
-                  <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" height="50" width="50"/></div>
-                  <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" height="50" width="50"/></div>
-                  <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" height="50" width="50"/></div>
-                  <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/objectivec/objectivec-plain.svg" height="50" width="50"/></div>
-                  <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swift/swift-original-wordmark.svg" height="50" width="50"/></div>
-                  
-                  
-                  
-                  
-                  
-                  
-
-                  <!-- the order: python, java, c/c++/c#/obj-c, sql-lite, html, css, sass, php, javascript, pyscript, typescript, node, react-->
-          <!-- future: 
-                  <div class="column">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />
-          </div>
-          <div class="column">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rust/rust-plain.svg" /></div>
-            <div class="column"> 
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original-wordmark.svg" />
-          </div> -->
-          <!-- astro, perlm notion
-          strong skills vs minor? -->
-                
-                  
-                  
-                  
-                  
-<!--                   
-                  
-                  <div class="column"></div>
-                  <div class="column"></div> -->
-
-
-                </div>
-                </div>
-                
-                <div class="columns is-full is-multiline is-centered is-gapless is-mobile">
-                   <div class="column is-full"><p class="title has-text-white has-text-centered">Tools</p></div> 
-                  <div class="columns is-mobile is-multiline is-centered">
-                    <!-- order: django, flask, mysql, sqllite, mongodb, git, linux, unbuntu, xcode, photoshop vscode, xcode, eclipse, ssh -->
-                    <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain-wordmark.svg" height="50" width="50"/></div>
-                    <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original-wordmark.svg" height="50" width="50"/></div>
-                    <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" height="50" width="50"/></div>
-                    <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original-wordmark.svg" height="50" width="50"/></div>
-                    <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original-wordmark.svg" height="50" width="50"/></div>
-                    <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original-wordmark.svg" height="50" width="50"/></div>
-
-                    <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-plain.svg" height="50" width="50"/></div>
-                    <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ubuntu/ubuntu-original-wordmark.svg" height="50" width="50"/></div>
-
-                    <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" height="50" width="50"/></div>
-                    <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/xcode/xcode-original.svg" height="50" width="50"/></div>
-                    <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg" height="50" width="50"/></div>
-                    <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ssh/ssh-original-wordmark.svg" height="50" width="50"/></div>
-                    <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/eclipse/eclipse-original-wordmark.svg" height="50" width="50"/></div>
-                    <!-- <div class="column"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original-wordmark.svg" height="100" width="100"/></div>  -->
-
-                  </div>
-
-
-                  <!-- <div class="column">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/json/json-original.svg" />
-          </div>
-                
-          <div class="column">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg" />
-          </div> -->
-                </div>
-
-            </div>
         </div>
-        <div class="columns is-multiline is-full is-centered is-vcentered has-text-centered">
-              
-              <div class="column is-full is-centered">
-                <div class="columns is-full is-centered">
-                  <div class="column is-four-fifths is-narrow">
-                    
-                  </div>  
-                  <div class="column is-half is-centered is-narrow">
-                    <div class="crop">
-                    <img src="orangesquiggle.gif" style="transform: scaleX(-1); object-fit: cover; margin: -75px 0 0 -100px;" width="400px" height="300px" />
-                    </div>
-                  </div>  
-                    
-                </div>
-              </div>
 
-      </div> <!--  hero-body -->
       </h1> 
 
     <!-- END ABOUT PAGE -->
-    
-    <!-- START WORK SECTION ; PUT RESUME HERE?--> <!-- resume style experience, education, tc.-->
-    
-      <h1 class="hero" id="section3" style="background-color: rgba(238, 0, 255, 0.1)">
-        <div class="hero-body">
-          <div class="container content is-centered has-text-centered">
-          
-            <div class="column is-full"><hr class="has-text-white"><p class="title has-text-white">Experience</p><hr class="has-text-white"></div> <!-- horizontal line -->
-            
-            <div class="columns">
-              <!-- Column A-->
-              <div class="column is-vcentered is-multiline">
-                <div class="columns is-vcentered is-multiline is-full is-centered has-text-right">
-                  <div class="column is-full"><p class="has-text-white title is-1">Education</p></div>
-                  <div class="column is-full"></div> <!-- spacer -->
-                  <div class="column is-full"></div> <!-- spacer: put a card here so it auto-sizes with the display?-->
-                  <div class="column is-full"><p class="has-text-white title is-1">Work Experience</p></div>
-                  <div class="column is-full"></div> <!-- spacer -->
-                  <div class="column is-full"></div> <!-- spacer -->
-                  <div class="column is-full"><p class="has-text-white title is-1">Volunteering</p></div>
-                  <div class="column is-full"></div> <!-- spacer -->
-                  <div class="column is-full"></div> <!-- spacer -->
-                  <div class="column is-full"><p class="has-text-white title is-1">Other Skills & Certs</p></div>
-                </div>
-              </div>
-
-              <!-- Column B -->
-              <div class="column">
-
-                <!-- Education -->
-                <div class="columns is-full is-centered is-multiline">
-
-                  <div class="column is-0"></div> <!-- spacer -->
-
-                  <div class="column card is-two-fifths has-text-centered">
-                    <div class="card-content">
-                    <p class="title is-6"> SUNY New Paltz</p>
-                    <p class="subtitle is-6">Bachelors of Science<br> Computer Science <br><span class="is-italic">Class of 2024</span></p>
-                    </div>
-                  </div>
-
-                  <div class="column is-0"></div> <!-- spacer -->
-
-                  <div class="column card is-two-fifths has-text-centered">
-                    <div class="card-content">
-                    <p class="title is-6"> SUNY Duchess Community College</p>
-                    <p class="subtitle is-6">Associate of Science<br> General Studies <br><span class="is-italic">Class of 2020</span></p>
-                    </div>
-                  </div>
-
-                  <div class="column"></div> <!-- spacer -->
-
-                </div>
-
-                 <!-- Work Experience -->
-                <div class="columns is-full is-centered is-multiline">
-
-                  <div class="column is-0"></div> <!-- spacer -->
-
-                  <div class="column card">
-                    <p class="title is-6"> SUNY Duchess Community College</p>
-                    <p class="subtitle is-6">A.A.S. General Studies 2020</p>
-                  </div>
-
-                  <div class="column is-0"></div> <!-- spacer -->
-
-                  <div class="column card">
-                    <p class="title is-6"> SUNY New Paltz</p>
-                    <p class="subtitle is-6">B.S. Computer Science <br>2024</p>
-                  </div>
-
-                  <div class="column"></div> <!-- spacer -->
-
-                </div>
-
-                 <!-- Work Experience -->
-                <div class="columns is-full is-centered is-multiline">
-
-                  <div class="column is-0"></div> <!-- spacer -->
-
-                  <div class="column card">
-                    <p class="title is-6"> SUNY Duchess Community College</p>
-                    <p class="subtitle is-6">A.A.S. General Studies 2020</p>
-                  </div>
-
-                  <div class="column is-0"></div> <!-- spacer -->
-
-                  <div class="column card">
-                    <p class="title is-6"> SUNY New Paltz</p>
-                    <p class="subtitle is-6">B.S. Computer Science <br>2024</p>
-                  </div>
-
-                  <div class="column"></div> <!-- spacer -->
-
-                </div>
-
-                 <!-- Work Experience -->
-                <div class="columns is-full is-centered is-multiline">
-                  <div class="column is-0"></div> <!-- spacer -->
-
-                  <div class="column card">
-                    <p class="title is-6"> SUNY Duchess Community College</p>
-                    <p class="subtitle is-6">A.A.S. General Studies 2020</p>
-                  </div>
-
-                  <div class="column is-0"></div> <!-- spacer -->
-
-                  <div class="column card">
-                    <p class="title is-6"> SUNY New Paltz</p>
-                    <p class="subtitle is-6">B.S. Computer Science <br>2024</p>
-                  </div>
-
-                  <div class="column"></div> <!-- spacer -->
-
-                </div>
-
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </h1>
-    <!-- END CONTACT SECTION -->
-     <!-- PROJECTS VVV-->
+    <!-- PROJECTS VVV-->
 
             <!-- BLANK SPACE 1: Does this change whenon mobile or resizing window? how to use fixed-grid col-size-3 and get it to work so it is flexible for the viewS?-->
                 <!-- <div class="cell is-row-span-3"></div> -->
@@ -461,17 +185,18 @@
                   <!-- also if i can put it on a nice background of a background card, similar color to the background of the other cards? cream-offwhite greyish?-->
                     <!-- lastly, make all the elements fade in with the scroll page. look at other webs for inspo-->
                     
-    <h1 id="section4" class="hero" style="background-color: rgb(0, 115, 255, .1);">
+    <h1 id="section3" class="hero" style="background-color: rgb(0, 115, 255, .2);">
       <div class="hero-body">
         <div class="columns is-multiline is-6"  style="text-align:right;">
           
-           <div class="column is-vcentered is-centered"><img src="gears-6121_256.gif" style="transform: scaleX(-1);" width="400" height="300" /></div>
+           <div class="column is-vcentered"><img src="gears-6121_256.gif" style="transform: scaleX(-1);" width="400" height="300" /></div>
           <div class="column is-8 is-pulled-right has-text-white has-text-right is-gapless is-vcentered"  style="text-align:right;"> <div class="column"></div> <p class="title  has-text-left is-size-1" >Projects </p>The Declaration of Independence, adopted on July 4, 1776, declared that the 13 American colonies were free and independent from Great Britain. It outlined the reasons for this separation, including the colonists' grievances against the British government and their belief in natural rights like life, liberty, and the pursuit of happiness. The document also declared that all men are created equal and have certain unalienable rights. </div>
-          <div class="column is-full" style="text-align:right;" id="ProjectsScrollButton"><p class="has-text-right subtitle has-text-primary-95">More <i class="icon is-small fa-sharp fa-solid fa-circle-arrow-right fa-beat fa-sm" ></i></p></div> <!-- spacer -->
+          <div class="column is-full" style="text-align:right;"><p class="has-text-right subtitle has-text-primary-95">More >></p></div> <!-- spacer -->
 
           
-          <div class="columns scrolling-wrapper" id="cardScroller" style="text-align:right;"> <!-- add scrolling-wrapper? -->
+          <div class="columns scrolling-wrapper" style="text-align:right;"> <!-- add scrolling-wrapper? -->
   
+            
             <!-- For class column, do is-4-desktop, is-6-tablet?-->
             
               <!------------ CARD ------------> 
@@ -645,199 +370,16 @@
               <div class="column is-1"></div> <!-- spacer -->
               
           </div>
-            <div class="column is-full is-gapless"></div> <!-- spacer -->
+                     <div class="column is-full is-gapless"></div> <!-- spacer -->
         </div>
       </div>
     </h1>
     <!-- END PROJECTS-->
-    <!-- START CONTACT SECTION--> 
-    <h1 id="section5" class="hero" style="background-color: rgba(255, 234, 0, 0.1)">
-      <div class="hero-body">
-        <p class="title has-text-white has-text-center" style="text-align: center;">Contact</p>
+    <!-- START CONTACT SECTION ; PUT RESUME HERE?-->
+    
+      <h1 id="section4" style="background-color: rgba(255, 234, 0, 0.2)">4</h1>
+    <!-- END CONTACT SECTION -->
 
-        <!-- Socials -->
-
-        <div class="columns is-full is-centered has-text-centered">
-          <div class="column is-centered">
-            <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/emmanuel-c-johnson/"><button class="button is-large is-centered is-link "> <!-- has-background-link-60 rgba(255, 234, 0, 0.1);"> -->
-              <span class="icon is-medium">
-                <i class="fab fa-brands fa-linkedin has-text-white"></i>
-              </span>
-              <span class="has-text-white">LinkedIn</span>
-            </button></a>
-          </div>
-          <div class="column">
-            <a target="_blank" rel="noopener noreferrer" href="https://github.com/ejayj"><button class="button is-dark is-large">
-              <span class="icon is-medium">
-                <i class="fab fa-github"></i>
-              </span>
-              <span>GitHub</span>
-            </button></a>
-          </div>
-          <div class="column"> <!-- make button with Shiny aniimation?-->
-            <a target="_blank" rel="noopener noreferrer" href="myresume.pdf"><button class="button is-warning is-focused is-large">
-              <span class="icon is-medium">
-                <i class="fa-solid fa-file"></i>
-              </span>
-              <span>Resume</span>
-            </button></a>
-          </div>
-          <div class="column">
-            <a href="mailto:ejayleaf@gmail.com"><button class="button is-light is-large">
-              <span class="icon is-medium">
-                <i class="fa-solid fa-envelope"></i> <!-- fab fa-word -->
-              </span>
-              <span>Email</span>
-            </button></a>
-          </div>
-      </div>
-      
-        <!-- Contact Me -->
-      <div class="columns is-full is-narrow has-text-centered is-multiline is-centered">
-        <div class="column is-full is-narrow has-text-centered">
-          <p class="title has-text-white has-text-center is-invisible" style="text-align: center;">Write Me!</p> <!-- is invisible for now-->
-        </div>
-        
-        <div class="column is-two-fifths is-centered has-text-centered">
-          <div class="container card">
-            <header class="card-header  has-text-centered">
-            <p class="card-header-title subtitle has-text-dark has-text-weight-bold has-text-centered is-centered" style="text-align: center;">Coming Soon!</p>
-            </header>
-
-            <div class="card-content">
-              <div class="content">
-            <form action="index.php">
-
-              <div class="field">
-                <label class="label has-text-left has-text-grey">Name</label>
-                <div class="control">
-                  <input class="input" type="text" placeholder="e.g John Doe" name="name" required disabled>
-                </div>
-              </div>
-
-              <div class="field">
-                <label class="label has-text-left has-text-grey">Email</label>
-                <div class="control has-icons-left has-icons-right">
-                  <input class="input is-danger" type="email" placeholder="Email input" value="hello@" disabled>
-                  <span class="icon is-small is-left">
-                    <i class="fas fa-envelope"></i>
-                  </span>
-                  <span class="icon is-small is-right">
-                    <i class="fas fa-exclamation-triangle"></i>
-                  </span>
-                </div>
-                <p class="help is-danger has-text-danger-05 has-text-grey">This email is invalid</p>
-              </div>
-
-              <div class="field">
-                <label for="subject" class="label has-text-left has-text-grey">Subject</label>
-                <div class="control">
-                  <input class="input" type="text" placeholder="Text input" disabled>
-                </div>
-              </div>
-
-              <div class="field">
-                <label class="label has-text-grey">Message</label>
-                <div class="control">
-                  <textarea class="textarea" placeholder="Write something.."disabled></textarea> <!-- style="height:200px" -->
-                </div>
-              </div>
-              
-              <div class="field is-grouped is-centered has-text-centered">
-                <div class="control">
-                  <button class="button is-warning is-centered has-text-centered" disabled>Submit</button>
-                </div>
-                <div class="control">
-                  <button class="button is-warning is-light is-centered has-text-centered"disabled >Cancel</button>
-                </div>
-              </div>
-
-            </form> 
-              </div>
-            </div>
-
-            <!-- Contact Me
-      <div class="columns is-full is-narrow has-text-centered is-multiline is-centered">
-        <div class="column is-full is-narrow has-text-centered">
-          <p class="title has-text-white has-text-center" style="text-align: center;">Write Me!</p>
-        </div>
-        
-        <div class="column is-two-fifths is-centered has-text-centered">
-          <div class="container formscontainer">
-            <p class="subtitle has-text-dark has-text-weight-bold has-text-centered" style="text-align: center;">Coming Soon!</p>
-            <form action="index.php">
-
-              <div class="field">
-                <label class="label has-text-left">Name</label>
-                <div class="control">
-                  <input class="input" type="text" placeholder="e.g John Doe" name="name" required>
-                </div>
-              </div>
-
-              <div class="field">
-                <label class="label has-text-left">Email</label>
-                <div class="control has-icons-left has-icons-right">
-                  <input class="input is-danger" type="email" placeholder="Email input" value="hello@">
-                  <span class="icon is-small is-left">
-                    <i class="fas fa-envelope"></i>
-                  </span>
-                  <span class="icon is-small is-right">
-                    <i class="fas fa-exclamation-triangle"></i>
-                  </span>
-                </div>
-                <p class="help is-danger">This email is invalid</p>
-              </div>
-
-              <div class="field">
-                <label for="subject" class="label has-text-left">Subject</label>
-                <div class="control">
-                  <input class="input" type="text" placeholder="Text input">
-                </div>
-              </div>
-
-              <div class="field">
-                <label class="label">Message</label>
-                <div class="control">
-                  <textarea class="textarea" placeholder="Write something.."></textarea>  //comment: style="height:200px" 
-                </div>
-              </div>
-              
-              <div class="field is-grouped is-centered has-text-centered">
-                <div class="control">
-                  <button class="button is-warning is-centered has-text-centered">Submit</button>
-                </div>
-                <div class="control">
-                  <button class="button is-warning is-light is-centered has-text-centered">Cancel</button>
-                </div>
-              </div>
-
-            </form>  -->
-
-            <!-- if{ email is invalid, do triangle and error message and red}
-else
-blue email symbol
-
-do icon for name? make required? 
-
-maybe for php, if any input of form is invalid, mail not sent, or invalid, change things to red?
-
-
-center send buttons
-
-set up clear button
-
-set up contact thingy as disabled. get website ready first and setup php afterwards so i can apply sooner rather than later-->
-          </div>
-        </div>
-      </div>
-    </h1>
-<script>
-  window.addEventListener('DOMContentLoaded', function() {
-    if (typeof decodeText === 'function') {
-      decodeText();
-    }
-  });
-</script>
   </body>
 
 </html>
