@@ -144,38 +144,6 @@
         
       </h1>
     <!-- END LANDING PAGE -->
-     <script>
-  // List your section IDs in order
-  const sectionIds = ["section1", "section2", "section3", "section4", "section5"];
-
-  document.getElementById('autoScrollBtn').addEventListener('click', function() {
-    // Get current scroll position
-    const scrollY = window.scrollY || window.pageYOffset;
-    // Find the current section in view
-    let nextSection = null;
-    for (let i = 0; i < sectionIds.length; i++) {
-      const section = document.getElementById(sectionIds[i]);
-      if (section) {
-        const rect = section.getBoundingClientRect();
-        // Section is at least partially in view
-        if (rect.top + window.scrollY - 50 <= scrollY && rect.bottom + window.scrollY - 50 > scrollY) {
-          // Scroll to the next section if it exists
-          if (i + 1 < sectionIds.length) {
-            nextSection = document.getElementById(sectionIds[i + 1]);
-          }
-          break;
-        }
-      }
-    }
-    // If not found, scroll to the first section
-    if (!nextSection) {
-      nextSection = document.getElementById(sectionIds[0]);
-    }
-    if (nextSection) {
-      nextSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
-</script>
     <!-- START ABOUT PAGE-->
       <h1 id="section2" class="hero is-fullheight" style="background-color: rgba(255, 157, 0, 0.1)">
       <div class="hero-body"> <!-- is-flex is-justify-content-center is-align-items-center -->
@@ -359,14 +327,14 @@
           <div class="container content is-centered has-text-centered">
           
             <div class="column is-full"><hr class="has-text-white"><p class="title has-text-white is-2">Experience</p><hr class="has-text-white"></div> <!-- horizontal line -->
-
-            <div class="columns is-centered is-mobile">
-              <div class="column is-centered is-mobile">
+            <!-- make column A invisible, and replace with visible lables over the cards for mobile only-->
+            <div class="columns is-centered is-multiline">
+              <div class="column is-centered">
 
                 <!-- Education -->
-                <div class="columns is-full is-centered is-mobile">
+                <div class="columns is-full is-centered">
 
-                  <div class="column is-half container is-vcenter is-flex is-justify-content-flex-end is-align-items-center"><p style="float: right;" class="has-text-white has-text-right title is-3">Education</p></div>
+                  <div class="column is-half is-centered is-flex-tablet is-justify-content-flex-end is-align-items-center"><p class="has-text-white title is-3">Education</p></div>
                   
                   <div class="column card is-3 has-text-centered">
                     <div class="card-content">
@@ -389,9 +357,9 @@
                 </div>
 
                 <!-- Work Experience -->
-                <div class="columns is-full is-centered is-mobile">
+                <div class="columns is-full is-centered">
 
-                  <div class="column is-half container is-vcenter is-flex is-justify-content-flex-end is-align-items-center"><p style="float: right;" class="has-text-white has-text-right title is-3">Work Experience</p></div>
+                  <div class="column is-half is-center is-flex-tablet is-justify-content-flex-end is-align-items-center"><p class="has-text-white title is-3">Work Experience</p></div>
                   
                   <div class="column card is-3 has-text-centered is-justify-content-flex-end is-align-items-center">
                     <div class="card-content">
@@ -414,9 +382,9 @@
                 </div>
 
                 <!-- Volunteering -->
-                <div class="columns is-full is-centered is-mobile">
+                <div class="columns is-full is-centered">
 
-                  <div class="column is-half container is-vcenter is-flex is-justify-content-flex-end is-align-items-center"><p style="float: right;" class="has-text-white has-text-right title is-3">Volunteering</p></div>
+                  <div class="column is-half is-centered is-flex-tablet is-justify-content-flex-end is-align-items-center"><p class="has-text-white title is-3">Volunteering</p></div>
                   
                   <div class="column card is-2 has-text-centered">
                     <div class="card-content">
@@ -486,7 +454,9 @@
           
            <div class="column is-vcentered is-centered"><img src="gears-6121_256.gif" style="transform: scaleX(-1);" width="400" height="300" /></div>
           <div class="column is-8 is-pulled-right has-text-white has-text-right is-gapless is-vcentered"  style="text-align:right;"> <div class="column"></div> <p class="title  has-text-left is-size-1" >Welcome to My Projects!</p>These are my most recent projects, as well as a complete list of all completed projects ever worked on by myself (including a few school projects). For a complete list of projects containing viewable code, please visit my <a target="_blank" rel="noopener noreferrer" href="https://github.com/ejayj">github</a>. Most projects include a description, some images, and if possible a live link and github redirect. For more information about any one of my projects, please feel free to reach out to me!</div>
-          <div class="column is-full" style="text-align:right;" id="ProjectsScrollButton"><p class="has-text-right subtitle has-text-primary-95">More <i class="icon is-small fa-sharp fa-solid fa-circle-arrow-right fa-beat fa-sm" ></i></p></div> <!-- spacer -->
+          <div class="column is-full" style="text-align:right;"><p class="has-text-right subtitle has-text-primary-95" onclick="ProjectsScroll();" >More <i class="icon is-small fa-sharp fa-solid fa-circle-arrow-right fa-beat fa-sm" ></i></p></div> spacer
+           <!-- <div class="column is-full" style="text-align:right;"><p class="has-text-right subtitle has-text-primary-95" onclick="ProjectsScroll();" >More <i class="icon is-small fa-sharp fa-solid fa-circle-arrow-right fa-beat fa-sm" ></i></p></div> spacer -->
+            <!-- <div class="column is-full" style="text-align:right;"><button onclick="ProjectsScroll();">More</button></div>  -->
 
           
           <div class="columns scrolling-wrapper" id="cardScroller" style="text-align:right;"> <!-- add scrolling-wrapper? -->

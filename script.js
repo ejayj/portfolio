@@ -80,9 +80,9 @@ class ParticleSystem {
     }
 }
 
-        const canvas = document.getElementById('container')
-        canvas.width = window.innerWidth
-        canvas.height = window.innerHeight
+        const canvas = document.getElementById('container');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
         const system = new ParticleSystem(canvas, { x: window.innerWidth, y: window.innerHeight })
         system.ammount = 100
         system.diameter = { min: 1, max: 2 }
@@ -213,6 +213,17 @@ document.getElementById('ProjectsScrollButton').addEventListener('click', functi
   // Scroll by 3 cards
   scroller.scrollBy({ left: cardWidth * 3, behavior: 'smooth' });
 });
+
+function ProjectsScroll(){
+    const scroller = document.getElementById('cardScroller');
+  // Find one card's width (including margin)
+  const card = scroller.querySelector('.column');
+  if (!card) return;
+  const cardStyle = window.getComputedStyle(card);
+  const cardWidth = card.offsetWidth + parseInt(cardStyle.marginLeft) + parseInt(cardStyle.marginRight);
+  // Scroll by 3 cards
+  scroller.scrollBy({ left: cardWidth * 3, behavior: 'smooth' });
+}
 
 
         //new idea:
