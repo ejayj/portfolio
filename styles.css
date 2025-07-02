@@ -741,3 +741,15 @@ input[type=submit]:hover {
         height: 300px; 
         margin: -75px 0 0 -100px;
     }
+
+/* Default fill color for light mode */
+svg .darkmode {
+  fill: black;
+}
+
+/* Fill color for dark mode */
+@media (prefers-color-scheme: dark) {
+  svg .darkmode {
+    fill: white;
+  }
+}
