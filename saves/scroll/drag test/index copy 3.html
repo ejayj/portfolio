@@ -319,6 +319,7 @@
       </h1> 
 
     <!-- END ABOUT PAGE -->
+    
     <!-- START WORK SECTION ; PUT RESUME HERE?--> <!-- resume style experience, education, tc.-->
     
       <h1 class="hero" id="section3" style="background-color: rgba(238, 0, 255, 0.1)">
@@ -453,19 +454,19 @@
           
            <div class="column is-vcentered is-centered"><img src="gears-6121_256.gif" style="transform: scaleX(-1);" width="400" height="300" /></div>
           <div class="column is-8 is-pulled-right has-text-white has-text-right is-gapless is-vcentered"  style="text-align:right;"> <div class="column"></div> <p class="title  has-text-left is-size-1" >Welcome to My Projects!</p>These are my most recent projects, as well as a complete list of all completed projects ever worked on by myself (including a few school projects). For a complete list of projects containing viewable code, please visit my <a target="_blank" rel="noopener noreferrer" href="https://github.com/ejayj">github</a>. Most projects include a description, some images, and if possible a live link and github redirect. For more information about any one of my projects, please feel free to reach out to me!</div>
-          <div class="column is-full" style="text-align:right;"><p class="has-text-right subtitle has-text-primary-95" onclick="ProjectsScroll();" >Scroll <i class="icon is-small fa-sharp fa-solid fa-circle-arrow-right fa-beat fa-sm" ></i></p></div>
+          <div class="column is-full" style="text-align:right;"><p class="has-text-right subtitle has-text-primary-95" onclick="ProjectsScroll();" >More <i class="icon is-small fa-sharp fa-solid fa-circle-arrow-right fa-beat fa-sm" ></i></p></div>
            <!-- <div class="column is-full" style="text-align:right;"><p class="has-text-right subtitle has-text-primary-95" onclick="ProjectsScroll();" >More <i class="icon is-small fa-sharp fa-solid fa-circle-arrow-right fa-beat fa-sm" ></i></p></div> spacer -->
             <!-- <div class="column is-full" style="text-align:right;"><button onclick="ProjectsScroll();">More</button></div>  -->
 
           
-          <div class="columns is-narrow scrolling-wrapper scroll-container" id="cardScroller" style="text-align:right; background-color: rgba(253, 244, 222, 0.05);"> <!-- add scrolling-wrapper? -->
+          <div class="columns scrolling-wrapper" id="cardScroller" style="text-align:right;"> <!-- add scrolling-wrapper? -->
   
 
             <div class="column is-0 is-hidden-mobile"></div> <!-- spacer -->
             <!-- For class column, do is-4-desktop, is-6-tablet?-->
             
               <!------------ CARD ------------> 
-                <div class="column is-4" style="display: inline-block;">
+                <div class="column is-4">
                   <div class="card is-shady">
                     <header class="card-header"> 
                         <p class="card-header-title">Spotify API (Nov 2023-Present)</p>
@@ -493,8 +494,8 @@
                 </div>
 
               <!------------ CARD ------------> 
-                <div class="column is-4" style="display: inline-block;">
-                  <div class="card is-shady" >
+                <div class="column is-4">
+                  <div class="card is-shady">
                     <header class="card-header"> 
                         <p class="card-header-title">Discord.py (Jan 2024)</p>
                           <button class="card-header-icon" aria-label="more options">
@@ -521,7 +522,7 @@
                 </div>
 
               <!------------ CARD ------------> 
-                <div class="column is-4" style="display: inline-block;">
+                <div class="column is-4">
                   <div class="card is-shady">
                     <header class="card-header"> 
                         <p class="card-header-title">Overwatch Script (Nov 2023/Feb 2024)</p>
@@ -549,7 +550,7 @@
                 </div>
 
               <!------------ CARD ------------> 
-                <div class="column is-4" style="display: inline-block;">
+                <div class="column is-4">
                   <div class="card is-shady">
                     <header class="card-header"> 
                         <p class="card-header-title">Codies.xyz (Nov 2023)</p>
@@ -577,7 +578,7 @@
                 </div>
               
               <!------------ CARD ------------> 
-                <div class="column is-4" style="display: inline-block;">
+                <div class="column is-4">
                   <div class="card is-shady">
                     <header class="card-header"> 
                         <p class="card-header-title">WebVizOS (Fall 2023)</p>
@@ -605,7 +606,7 @@
                 </div>
 
               <!------------ CARD ------------> 
-                <div class="column is-4" style="display: inline-block;">
+                <div class="column is-4">
                   <div class="card is-shady">
                     <header class="card-header"> 
                         <p class="card-header-title">Class Scheduler (Fall 2022)</p>
@@ -680,6 +681,103 @@
             </button></a>
           </div>
       </div>
+       <script>
+        const slider = document.querySelector('.card_cont');
+        const cards = document.querySelector('.cardz');
+        let isPressed = false;
+        let startX, startLeft;
+
+        slider.addEventListener("mousedown", (e) => {
+            isPressed = true;
+            slider.style.cursor = "grabbing";
+            startX = e.clientX;
+            startLeft = parseInt(cards.style.left) || 0;
+        });
+
+        slider.addEventListener("mousemove", (e) => {
+            if (!isPressed) return;
+            e.preventDefault();
+            let dx = e.clientX - startX;
+            cards.style.left = `${startLeft + dx}px`;
+            boundSlides();
+        });
+
+        window.addEventListener("mouseup", () => {
+            isPressed = false;
+            slider.style.cursor = "grab";
+            boundSlides();
+        });
+
+        function boundSlides() {
+            const containerRect = slider.getBoundingClientRect();
+            const cardsRect = cards.getBoundingClientRect();
+            let left = parseInt(cards.style.left) || 0;
+            if (left > 0) {
+                cards.style.left = "0px";
+            } else if (cardsRect.right < containerRect.right) {
+                cards.style.left = `-${cardsRect.width - containerRect.width}px`;
+            }
+        }
+    </script>
+    <style>
+         /* body {
+            background: #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        } */
+        .card_cont {
+            width: 1000px;
+            height: 500px;
+            position: relative;
+            overflow: hidden;
+            /* display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; */
+        }
+        .cardz {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            gap: 20px;
+            user-select: none;
+            cursor: grab;
+        }
+        .card1 {
+            width: 300px;
+            height: 400px;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 5px 20px 0px rgba(69, 67, 96, 0.2);
+            flex-shrink: 0;
+        }
+        .card1 img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .card__content {
+            padding: 10px;
+            color: #333;
+        }
+        
+    </style>
+
+      <div class="card_cont">
+      <div class="cardz" style="left:0px;">
+        <div class="card1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_X3kCeWYJuVS-vouoQhCfcRWKwbBX6RG1bA&usqp=CAU" alt="" /><div class="card__content"><h1>Coderpad</h1><p>Card 1</p></div></div>
+            <div class="card1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-jt3d-_xLuJFSQPmo6Tqepn4_wtLlgb9RHA&usqp=CAU" alt="" /><div class="card__content"><h1>Coderpad</h1><p>Card 2</p></div></div>
+            <div class="card1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGqsuPapsSkvE1CmgIDKLzz7wae5kXblPhan-of6_uEBgiVuikb7SXAKJuhkEL-7I47Vg&usqp=CAU" alt="" /><div class="card__content"><h1>Coderpad</h1><p>Card 3</p></div></div>
+            <div class="card1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8IO5pV7-yK2sN_BWo1UKij8xoRE9g2RoPHgqVD44wG0UAwXJyhPLGr4_-intJUVg-I0w&usqp=CAU" alt="" /><div class="card__content"><h1>Coderpad</h1><p>Card 4</p></div></div>
+            <div class="card1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTykw4RpJXpvKdG2mioMW0HfzNjXfGtzS_ojZ3adk_IBqp3xSbSVBIv0jJ2khhML_sZv5s&usqp=CAU" alt="" /><div class="card__content"><h1>Coderpad</h1><p>Card 5</p></div></div>
+            <div class="card1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX5G4dIuaf2GvJH8qrsqK8fJI8jcJbxo_SLQapss5k0fgcS0weQz8T2iL19MoQhBLzJQw&usqp=CAU" alt="" /><div class="card__content"><h1>Coderpad</h1><p>Card 6</p></div></div>
+        
+      </div>
+</div>
 
         <!-- Contact Me -->
       <div class="columns is-full is-narrow has-text-centered is-multiline is-centered">
@@ -826,13 +924,6 @@ set up contact thingy as disabled. get website ready first and setup php afterwa
       decodeText();
     }
   });
-
-  const scrollContainer = document.getElementById('cardScroller'); //scrolling-container,
-
-scrollContainer.addEventListener('wheel', (evt) => {
-  evt.preventDefault(); // Prevent vertical scroll
-  scrollContainer.scrollLeft += evt.deltaY; // Scroll horizontally instead
-});
 </script>
   </body>
 

@@ -211,7 +211,7 @@ document.getElementById('ProjectsScrollButton').addEventListener('click', functi
   const cardStyle = window.getComputedStyle(card);
   const cardWidth = card.offsetWidth + parseInt(cardStyle.marginLeft) + parseInt(cardStyle.marginRight);
   // Scroll by 3 cards
-  scroller.scrollBy({ left: cardWidth * 3, behavior: 'smooth' });
+  scroller.scrollBy({ left: cardWidth * 6, behavior: 'smooth' });
 });
 
 function ProjectsScroll(){
@@ -222,10 +222,39 @@ function ProjectsScroll(){
   const cardStyle = window.getComputedStyle(card);
   const cardWidth = card.offsetWidth + parseInt(cardStyle.marginLeft) + parseInt(cardStyle.marginRight);
   // Scroll by 3 cards
-  scroller.scrollBy({ left: cardWidth * 3, behavior: 'smooth' });
+  scroller.scrollBy({ left: cardWidth * 6, behavior: 'smooth' });
 }
+const slider = document.getElementById('cardScroller'); // Use the correct ID!
+let isDown = false;
+let startX, scrollLeft;
 
+slider.addEventListener('mousedown', (e) => {
+  isDown = true;
+  slider.classList.add('active');
+  slider.style.cursor = 'grabbing';
+  startX = e.pageX - slider.offsetLeft;
+  scrollLeft = slider.scrollLeft;
+});
 
+slider.addEventListener('mouseleave', () => {
+  isDown = false;
+  slider.classList.remove('active');
+  slider.style.cursor = 'grab';
+});
+
+slider.addEventListener('mouseup', () => {
+  isDown = false;
+  slider.classList.remove('active');
+  slider.style.cursor = 'grab';
+});
+
+slider.addEventListener('mousemove', (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - slider.offsetLeft;
+  const walk = (x - startX) * 1.5; // Adjust scroll speed as needed
+  slider.scrollLeft = scrollLeft - walk;
+});
         //new idea:
         //scrolling image that fades into the next one like the htmlup eventually template
         //buttons using css transition that enlarge as you scroll over them, or get bigger as you tap on it on iphone

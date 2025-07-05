@@ -453,7 +453,7 @@ h1.hero, #section3.hero {
 }
 
 .scrolling-wrapper {
-    overflow-x: scroll;
+    overflow-x: auto; /*scroll */
     overflow-y: hidden;
     white-space: nowrap;
     padding-bottom: 1rem;
@@ -463,10 +463,27 @@ h1.hero, #section3.hero {
     /* IE and Edge */
     scrollbar-width: none;
     /* Firefox */
+    cursor: grab; /* Indicate draggable */
+    user-select: none;
+    
 }
 
 .scrolling-wrapper::-webkit-scrollbar {
     display: none;
+}
+
+.scrolling-wrapper:active {
+    cursor: grabbing;
+}
+.scrolling-wrapper.active {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.scrolling-wrapper,
+.scrolling-wrapper * {
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 /* Prevent horizontal overflow for the hero section */
