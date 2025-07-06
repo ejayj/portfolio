@@ -41,9 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-function comingsoon() {
-    window.alert("Coming soon!")
-}
+// function comingsoon() {
+//     window.alert("Coming soon!")
+// }
 
 /* 
 Codepen for Particle Effects:
