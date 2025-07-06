@@ -1,6 +1,6 @@
 /* 
-https://github.com/Aneks1/canvas-particles
-This is my first pen, if you liked it please leave a heart 💗 
+Codepen for Particle Effects:
+https://github.com/Aneks1/canvas-particles 
 */
 
 class Particle {
@@ -95,7 +95,7 @@ onresize = (event) => {
   system.init()
 };
 
-        /* ------------------------------------------------------------------------ *  
+/* ------------------------------------------------------------------------ *  
 4 states per letter: Transparent | Line | Block | Visible.
 These states are shuffled for a unique "decode" effect each time.
 * ------------------------------------------------------------------------ */

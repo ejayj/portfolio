@@ -2,8 +2,7 @@
 <html>
 
   <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!-- <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no"> -->
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
       <link rel="stylesheet" href="styles.css">
       <script src="script.js"></script>
@@ -13,52 +12,6 @@
             <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
           
   </head>
-
-  <script> //******************* MY NOTES****************
-            //new idea:
-        //scrolling image that fades into the next one like the htmlup eventually template
-        //buttons using css transition that enlarge as you scroll over them, or get bigger as you tap on it on iphone
-        //as you scroll over each button, in javascript what you are scrolling over is changed by background
-
-        //add different mouse animation
-
-        //the pages themself will be fairly static, with maybe a carosel for the projects and a different hover animation
-        //and an animation for projects on click
-
-        //then a list of my skills/known languages fading in like that one htmlup hyperspace template
-
-        //the words "emmanuel johnson" will fade up also like the landing page on the htmlup hyperspace template
-        //the projects fadde in or about me fade in like the blue area of the hyperspacwe template? and then carosel? or maybe see more in projectS? or maybe make it about me?
-        //my skills pop in like the pink section
-
-        //contact me at bottom like framer stuff
-        //hire me and myr esume section
-
-        //we are stealing the animations from them. the actually website will be founded on pop ups or
-        //on click the whole page changes and background changes to a new page, with a big x to go back button on top right? or a left facing arrow
-
-
-        //maybe a little home button that pops up that follows you throughout the screen, bringing you home
-
-
-        //i need:
-        //A mobile-first responsive site that takes advantage of a front-end framework (like twitter bootstrap) 
-        //A site that displays your knowledge of a popular js framework like jquery, prototype, mootools, angular or react.js
-        //A site that shows your knowledge of a lot of the more obscure aspects of HTML5 and CSS3.
-        //Make sure all of sites are W3C valid.
-
-        //put resume at the top? or make contact me a modal?
-        //put github, linked, mail to and resume as floating side icons?
-        //make to home button not so ugly
-        //make project into columns
-        //start projects for other things
-
-        //TODO
-        //fix buttons, <!-- on smaller screen make buttons widerand make textnot overfill button-->
-        //make site mobile responsive
-
-        
-  </script>
 
   <body class="container1">
       <!-- START LANDING PAGE -->
@@ -73,16 +26,16 @@
               <i class="fa-solid fa-house fa-stack-1x fa-bounce"></i>
             </span></a>
 
+         <!-- scroll down -->
         <img id="scrollDown" class="is-hidden-mobile" src="./assets/gifs/Animation.gif"/>
-      <!-- scroll down -->
-          <!-- <img id="scrollDown" src="animation.gif"/> -->
+     
          <section > <!-- this keeps buttons from stretching out too much -->
               <div class="container is-fullhd has-text-centered"> 
 
                       <!-- center content -->
                       <div class="columns content has-text-centered is-mobile is-centered is-multiline" >
-                          <img class="profileicon image is-128x128 is-centered has-text-centered" style="justify-content: center;" src="./assets/pfp/image.png">
-                          <br>
+                        <img class="profileicon image is-128x128 is-centered has-text-centered" style="justify-content: center;" src="./assets/pfp/image.png">
+                        <br>
 
                           <div class="column is-full is-gapless is-narrow is-centered">
                               <div class="decode-text" style="font-weight: 500;" onclick="decodeText();">
@@ -109,13 +62,10 @@
                             <p class=" subtitle is-6 typewriter" style="color: white; "> Full-Stack Dev, Software Engineer.</p>
                           
                           </div>
-
-                          
-                            <!-- <p class="subtitle is-6 typewriter" style="color: white; ">I build things for the web.</p> -->
                          
-                           <div class="column is-full is-centered is-hidden-mobile"> <!-- resume button hides on mobile do to resizing issues-->
+                          <div class="column is-full is-centered is-hidden-mobile"> <!-- resume button hides on mobile do to resizing issues-->
                           <div class="columns is-full is-narrow is-centered has-text-centered">
-                            <div class="column is-one-third is-3-mobile is-narrow is-centered has-text-centered has-text-weight-bold" style="text-align: center;"><a target="_blank" rel="noopener noreferrer" href="./assets/myresume.pdf"><button class="button is-warning is-light is-rounded is-responsive is-outlined is-responsive is-medium is-fullwidth" style="background-color: rgb(244,186,67, .1)" >Resume</button></a></div> <!-- style="font-weight: 90px; background-color: rgb(244,186,67, .1)"-->
+                            <div class="column is-one-third is-3-mobile is-narrow is-centered has-text-centered has-text-weight-bold" style="text-align: center;"><a target="_blank" rel="noopener noreferrer" href="./assets/myresume.pdf"><button class="button is-warning is-light is-rounded is-responsive is-outlined is-responsive is-medium is-fullwidth" style="background-color: rgb(244,186,67, .1)" >Resume</button></a></div>
                           </div>
                           </div>
                          
@@ -145,14 +95,14 @@
       </h1>
     <!-- END LANDING PAGE -->
     <!-- START ABOUT PAGE-->
+
       <h1 id="section2" class="hero is-fullheight" style="background-color: rgba(255, 157, 0, 0.1)">
-      <div class="hero-body"> <!-- is-flex is-justify-content-center is-align-items-center -->
+      <div class="hero-body">
 
         <div class="container is-centered has-text-centered">
-          <!-- <img src="image2.png" style="width: 200px; height: 200px; border-radius: 20%;" height="100" width="100"> -->
           <div class="columns is-multiline is-full is-centered is-vcentered has-text-centered">
               
-              <!-- Photo/gif, and some exp/title-->
+              <!-- Photo/gif-->
               <div class="column is-full is-centered is-hidden-mobile"> <!-- tablet only squiggly line (centered)-->
                 <div class="columns is-full is-centered">
                   <div class="column is-half is-centered is-narrow">
@@ -182,12 +132,9 @@
               <p class="title has-text-white has-text-left">Hi There!</p>
               <p class="subtitle has-text-white">My name's Emmanuel, my friends call me Ejay. I'm a junior full stack web developer/software engineer who recently graduated from SUNY New Paltz with a Bachelor's degree in Computer Science (December of 2024)! Most of my background is in Emergency Medicine, with a lot of experience volunteering and leading teams and community events. It is my hope that with this background and unique perspective, I can provide unique solutions that will greatly aid your development team and likewise better help my community. For now, as a new grad, I am looking for entry-level junior positions or internships to begin my journey and learn to the utmost best of my ability, while being as helpful and efficient as possible. To learn more about me or my history, feel free to continue to scroll or hit the home button on the top right of the page. Or, to contact me for a potential job opportunity or website help, please visit the contact section of the webpage and I encourage you to reach out to me via one of my socials on the bottom left-hand side of your screen. You may also find a copy of my resume in PDF format on the bottom left in document icon fashion as well. Thank you for taking your time to read this and I wish you the best in your future endeavors!</p>
             </div>
-            <!-- <div class="column is-8 has-text-centered">
-              <p class="title has-text-white">About Me</p>
-              <p class="subtitle has-text-white">I am a Full-Stack Developer with a passion for creating dynamic and responsive web applications. I have experience in both front-end and back-end development, and I enjoy working with modern technologies to build efficient and scalable solutions.</p>
-            </div> -->
           </div>
-          <!-- educstion -->
+          
+          <!-- Skills -->
             <div class="columns is-centered is-full is-multiline is-centered is-gapless is-mobile">
               
                 <div class="columns is-full is-multiline is-centered is-gapless is-mobile">
@@ -195,6 +142,7 @@
 
                 <div class="columns is-mobile is-multiline is-centered">
                   
+                  <!-- the order: python, java, c/c++/c#/obj-c, sql-lite, html, css, sass, php, javascript, pyscript, typescript, node, react-->
                   <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg" height="50" width="50"/></div>
                   <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg" height="50" width="50" /> </div>
 
@@ -217,36 +165,6 @@
                   <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" height="50" width="50"/></div>
                   <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/objectivec/objectivec-plain.svg" height="50" width="50"/></div>
                   <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swift/swift-original-wordmark.svg" height="50" width="50"/></div>
-                  
-                  
-                  
-                  
-                  
-                  
-
-                  <!-- the order: python, java, c/c++/c#/obj-c, sql-lite, html, css, sass, php, javascript, pyscript, typescript, node, react-->
-          <!-- future: 
-                  <div class="column">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />
-          </div>
-          <div class="column">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rust/rust-plain.svg" /></div>
-            <div class="column"> 
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original-wordmark.svg" />
-          </div> -->
-          <!-- astro, perlm notion
-          strong skills vs minor? -->
-                
-                  
-                  
-                  
-                  
-<!--                   
-                  
-                  <div class="column"></div>
-                  <div class="column"></div> -->
-
-
                 </div>
                 </div>
                 
@@ -269,18 +187,7 @@
                     <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg" height="50" width="50"/></div>
                     <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ssh/ssh-original-wordmark.svg" height="50" width="50"/></div>
                     <div class="column is-narrow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/eclipse/eclipse-original-wordmark.svg" height="50" width="50"/></div>
-                    <!-- <div class="column"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original-wordmark.svg" height="100" width="100"/></div>  -->
-
                   </div>
-
-
-                  <!-- <div class="column">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/json/json-original.svg" />
-          </div>
-                
-          <div class="column">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg" />
-          </div> -->
                 </div>
 
             </div>
@@ -319,14 +226,13 @@
       </h1> 
 
     <!-- END ABOUT PAGE -->
-    <!-- START WORK SECTION ; PUT RESUME HERE?--> <!-- resume style experience, education, tc.-->
+    <!-- START WORK SECTION-->
     
       <h1 class="hero" id="section3" style="background-color: rgba(238, 0, 255, 0.1)">
         <div class="hero-body">
           <div class="container content is-centered has-text-centered">
           
             <div class="column is-full"><hr class="has-text-white"><p class="title has-text-white is-2">Experience</p><hr class="has-text-white"></div> <!-- horizontal line -->
-            <!-- make column A invisible, and replace with visible lables over the cards for mobile only-->
             <div class="columns is-centered is-multiline">
               <div class="column is-centered">
 
@@ -406,30 +312,13 @@
                   <div class="column card is-2 has-text-centered">
                     <div class="card-content">
                     <p class="title is-6">Local Community Events</p>
-                    <p class="subtitle is-6">Soup Kitchens, Homeless Drives, Fundraisers & more<br><span class="is-italic">2014-Present</span></p>
+                    <p class="subtitle is-6">Soup Kitchens, Homeless Drives, Fundraisers, Relay for Life & more<br><span class="is-italic">2014-Present</span></p>
                     </div>
                   </div>
 
                   <div class="column"></div> <!-- spacer -->
 
                 </div>
-
-                <!--Other Skills & Certs -->
-                <!-- <div class="columns is-full is-centered is-multiline">
-
-                  <div class="column is-0"></div>
-
-                  <div class="column is-full"><p class="has-text-white subtitle is-4 has-text-centered">Other Skills & Certs</p></div>
-
-                  <div class="column card has-text-centered">
-                    <div class="card-content">
-                    <p class="title is-6"> SUNY New Paltz</p>
-                    <p class="subtitle is-6">Bachelors of Science<br> Computer Science <br><span class="is-italic">Class of 2024</span></p>
-                    </div>
-                  </div>
-
-                </div> -->
-
               </div>
             </div>
 
@@ -453,16 +342,11 @@
           
            <div class="column is-vcentered is-centered"><img src="./assets/gifs/gears-6121_256.gif" style="transform: scaleX(-1);" width="400" height="300" /></div>
           <div class="column is-8 is-pulled-right has-text-white has-text-right is-gapless is-vcentered"  style="text-align:right;"> <div class="column"></div> <p class="title  has-text-left is-size-1" >Welcome to My Projects!</p>These are my most recent projects, as well as a complete list of all completed projects ever worked on by myself (including a few school projects). For a complete list of projects containing viewable code, please visit my <a target="_blank" rel="noopener noreferrer" href="https://github.com/ejayj">github</a>. Most projects include a description, some images, and if possible a live link and github redirect. For more information about any one of my projects, please feel free to reach out to me!</div>
-          <div class="column is-full" style="text-align:right;"><p class="has-text-right subtitle has-text-primary-95" onclick="ProjectsScroll();" >Scroll <i class="icon is-small fa-sharp fa-solid fa-circle-arrow-right fa-beat fa-sm" ></i></p></div>
-           <!-- <div class="column is-full" style="text-align:right;"><p class="has-text-right subtitle has-text-primary-95" onclick="ProjectsScroll();" >More <i class="icon is-small fa-sharp fa-solid fa-circle-arrow-right fa-beat fa-sm" ></i></p></div> spacer -->
-            <!-- <div class="column is-full" style="text-align:right;"><button onclick="ProjectsScroll();">More</button></div>  -->
-
+          <div class="column is-full" style="text-align:right;"><p class="has-text-right subtitle has-text-primary-95" onclick="ProjectsScroll();" >Scroll <i class="icon is-small fa-sharp fa-solid fa-circle-arrow-right fa-beat fa-sm"></i></p></div>
           
-          <div class="columns is-narrow scrolling-wrapper scroll-container" id="cardScroller" style="text-align:right; background-color: rgba(253, 244, 222, 0.05);"> <!-- add scrolling-wrapper? -->
+          <div class="columns is-narrow scrolling-wrapper scroll-container" id="cardScroller" style="text-align:right; background-color: rgba(253, 244, 222, 0.05);">
   
-
             <div class="column is-0 is-hidden-mobile"></div> <!-- spacer -->
-            <!-- For class column, do is-4-desktop, is-6-tablet?-->
             
               <!------------ CARD ------------> 
                 <div class="column is-4" style="display: inline-block;">
@@ -638,6 +522,7 @@
         </div>
       </div>
     </h1>
+
     <!-- END PROJECTS-->
     <!-- START CONTACT SECTION--> 
     <h1 id="section5" class="hero" style="background-color: rgba(255, 234, 0, 0.1)">
@@ -648,7 +533,7 @@
 
         <div class="columns is-full is-centered has-text-centered">
           <div class="column is-centered">
-            <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/emmanuel-c-johnson/"><button class="button is-large is-centered is-link "> <!-- has-background-link-60 rgba(255, 234, 0, 0.1);"> -->
+            <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/emmanuel-c-johnson/"><button class="button is-large is-centered is-link ">
               <span class="icon is-medium">
                 <i class="fab fa-brands fa-linkedin has-text-white"></i>
               </span>
@@ -674,17 +559,17 @@
           <div class="column">
             <a href="mailto:ejayleaf@gmail.com"><button class="button is-light is-large">
               <span class="icon is-medium">
-                <i class="fa-solid fa-envelope"></i> <!-- fab fa-word -->
+                <i class="fa-solid fa-envelope"></i>
               </span>
               <span>Email</span>
             </button></a>
           </div>
       </div>
 
-        <!-- Contact Me -->
+        <!-- Contact Me (Disabled Version; just remove is-invisible from the functional version when ready) -->
       <div class="columns is-full is-narrow has-text-centered is-multiline is-centered">
         <div class="column is-full is-narrow has-text-centered">
-          <p class="title has-text-white has-text-center is-invisible" style="text-align: center;">Write Me!</p> <!-- is invisible for now-->
+          <p class="title has-text-white has-text-center is-invisible" style="text-align: center;">Write Me!</p> <!-- is invisible for now until functional-->
         </div>
         
         <div class="column is-two-fifths is-centered has-text-centered">
@@ -728,7 +613,7 @@
               <div class="field">
                 <label class="label has-text-grey">Message</label>
                 <div class="control">
-                  <textarea class="textarea" placeholder="Write something.."disabled></textarea> <!-- style="height:200px" -->
+                  <textarea class="textarea" placeholder="Write something.."disabled></textarea>
                 </div>
               </div>
               
@@ -745,7 +630,7 @@
               </div>
             </div>
 
-            <!-- Contact Me
+            <!-- Contact Me (The fully functional version) ->
       <div class="columns is-full is-narrow has-text-centered is-multiline is-centered">
         <div class="column is-full is-narrow has-text-centered">
           <p class="title has-text-white has-text-center" style="text-align: center;">Write Me!</p>
@@ -833,7 +718,55 @@ scrollContainer.addEventListener('wheel', (evt) => {
   evt.preventDefault(); // Prevent vertical scroll
   scrollContainer.scrollLeft += evt.deltaY; // Scroll horizontally instead
 });
-</script>
+
+        //******************* MY NOTES****************
+            //new idea:
+        //scrolling image that fades into the next one like the htmlup eventually template
+        //buttons using css transition that enlarge as you scroll over them, or get bigger as you tap on it on iphone
+        //as you scroll over each button, in javascript what you are scrolling over is changed by background
+
+        //add different mouse animation
+
+        //the pages themself will be fairly static, with maybe a carosel for the projects and a different hover animation
+        //and an animation for projects on click
+
+        //then a list of my skills/known languages fading in like that one htmlup hyperspace template
+
+        //the words "emmanuel johnson" will fade up also like the landing page on the htmlup hyperspace template
+        //the projects fadde in or about me fade in like the blue area of the hyperspacwe template? and then carosel? or maybe see more in projectS? or maybe make it about me?
+        //my skills pop in like the pink section
+
+        //contact me at bottom like framer stuff
+        //hire me and myr esume section
+
+        //we are stealing the animations from them. the actually website will be founded on pop ups or
+        //on click the whole page changes and background changes to a new page, with a big x to go back button on top right? or a left facing arrow
+
+
+        //maybe a little home button that pops up that follows you throughout the screen, bringing you home
+
+
+        //i need:
+        //A mobile-first responsive site that takes advantage of a front-end framework (like twitter bootstrap) 
+        //A site that displays your knowledge of a popular js framework like jquery, prototype, mootools, angular or react.js
+        //A site that shows your knowledge of a lot of the more obscure aspects of HTML5 and CSS3.
+        //Make sure all of sites are W3C valid.
+
+        //put resume at the top? or make contact me a modal?
+        //put github, linked, mail to and resume as floating side icons?
+        //make to home button not so ugly
+        //make project into columns
+        //start projects for other things
+
+        //TODO
+        //fix buttons, <!-- on smaller screen make buttons widerand make textnot overfill button-->
+        //make site mobile responsive
+        //add/learn skills: react, rust, tailwind, astro, perlm notion, strong skills vs minor? -->
+        //Other Skills & Certs in experience section??
+        //make resume button with Shiny aniimation?
+        //set up contact me section
+        
+  </script>
   </body>
 
 </html>
