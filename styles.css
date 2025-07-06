@@ -463,8 +463,6 @@ h1.hero, #section3.hero {
     /* IE and Edge */
     scrollbar-width: none;
     /* Firefox */
-    cursor: grab; /* Indicate draggable */
-    user-select: none;
     
 }
 
@@ -472,19 +470,6 @@ h1.hero, #section3.hero {
     display: none;
 }
 
-.scrolling-wrapper:active {
-    cursor: grabbing;
-}
-.scrolling-wrapper.active {
-  cursor: grabbing;
-  user-select: none;
-}
-
-.scrolling-wrapper,
-.scrolling-wrapper * {
-  user-select: none;
-  -webkit-user-drag: none;
-}
 
 /* Prevent horizontal overflow for the hero section */
 #section3.hero {
