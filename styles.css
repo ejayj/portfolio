@@ -216,9 +216,9 @@ html {
     /* favorite color */
     overflow: scroll;
     /*scroll down when you click a button? lock scroll? */
-    cursor: url("mouseicon.png"), auto;
+    cursor: url("./assets/backgrounds/mouseicon.png"), auto;
     /* custom cursor */
-    cursor: url("mouseicon.png"), pointer;
+    cursor: url("./assets/backgrounds/mouseicon.png"), pointer;
     /* custom cursor */
     /* pointer-events: none; cursor: pointer; */
     scroll-behavior: smooth;
