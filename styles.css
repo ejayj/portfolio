@@ -195,7 +195,7 @@ h1 {
 
 html {
     background-color: rgb(219, 224, 230);
-    background-image: url("colors.jpg"); /* background-image: url("bg.jpg"); */
+    background-image: url("./assets/backgrounds/colors.jpg"); /* background-image: url("bg.jpg"); */
     /* url("img7.jpeg"); */
     background-size: cover;
 
