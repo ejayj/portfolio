@@ -384,12 +384,11 @@ slider.addEventListener('mousemove', (e) => {
 const scrollContainer = document.getElementById('cardScroller'); //scrolling-container,
 
 scrollContainer.addEventListener('wheel', (evt) => {
-    // Only hijack if the scroll is vertical (deltaY), not horizontal (deltaX)
-    if (Math.abs(evt.deltaY) > Math.abs(evt.deltaX)) {
-        evt.preventDefault();
-        scrollContainer.scrollLeft += evt.deltaY;
-    }
-    // If the user is scrolling horizontally (trackpad), let the browser handle it
+    // Always scroll horizontally, whether the user scrolls vertically or horizontally
+    evt.preventDefault();
+    // If shift is held, use deltaY (for shift+wheel), otherwise use deltaY for normal wheel
+    const scrollAmount = evt.shiftKey ? evt.deltaY : evt.deltaY;
+    scrollContainer.scrollLeft += scrollAmount;
 }, { passive: false });
 
 //new idea:
