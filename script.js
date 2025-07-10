@@ -385,25 +385,39 @@ slider.addEventListener('mousemove', (e) => {
 
 const scrollContainer = document.getElementById('cardScroller'); //scrolling-container,
 
-// ...existing code...
-
 scrollContainer.addEventListener('wheel', (evt) => {
-    // Detect Windows platform
-    // const isWindows = navigator.platform.toLowerCase().includes('win');
-    // Only map vertical wheel events to horizontal scroll for Windows and physical mouse (not touchpad)
-    if (
-        // isWindows &&
-        Math.abs(evt.deltaY) > 0 &&
-        Math.abs(evt.deltaX) === 0 &&
-        !evt.ctrlKey // ignore pinch-zoom
-    ) {
-        evt.preventDefault();
-        scrollContainer.scrollLeft += evt.deltaY;
-    }
-    // Otherwise, let the browser handle it (touchpad, Mac, etc.)
-}, { passive: false });
+  evt.preventDefault(); // Prevent vertical scroll
+  scrollContainer.scrollLeft += evt.deltaY; // Scroll horizontally instead
+});
 
-// ...existing code...
+// // ...existing code...
+
+// scrollContainer.addEventListener('wheel', (evt) => {
+//     // Detect Windows platform
+//     // const isWindows = navigator.platform.toLowerCase().includes('win');
+//     // Only map vertical wheel events to horizontal scroll for Windows and physical mouse (not touchpad)
+//     if (
+//         // isWindows &&
+//         Math.abs(evt.deltaY) > 0 &&
+//         Math.abs(evt.deltaX) === 0 &&
+//         !evt.ctrlKey // ignore pinch-zoom
+//     ) {
+//         evt.preventDefault();
+//         scrollContainer.scrollLeft += evt.deltaY;
+//     }
+//     // Otherwise, let the browser handle it (touchpad, Mac, etc.)
+// }, { passive: false });
+
+
+// scrollContainer.addEventListener('wheel', (evt) => {
+//     // Only hijack if the scroll is vertical (deltaY), not horizontal (deltaX)
+//     if (Math.abs(evt.deltaY) > Math.abs(evt.deltaX)) {
+//         evt.preventDefault();
+//         scrollContainer.scrollLeft += evt.deltaY;
+//     }
+//     // If the user is scrolling horizontally (trackpad), let the browser handle it
+// }, { passive: false });
+
 
 //new idea:
 //scrolling image that fades into the next one like the htmlup eventually template
