@@ -383,18 +383,29 @@ slider.addEventListener('mousemove', (e) => {
     slider.scrollLeft = scrollLeft - walk;
 });
 
-const scrollContainer = document.getElementById('cardScroller'); //scrolling-container,
+const container = document.getElementById("cardScroller");
+const itemToScroll = document.getElementById("scrollme");
 
+container.addEventListener("wheel", function(e) {
+  if (Math.abs(e.deltaY) > 0) {
+    e.preventDefault();
+    itemToScroll.scrollLeft +=e.deltaY;
+    
+    // itemToScroll.scrollTo({
+    //  left: itemToScroll.scrollLeft + e.deltaY,
+    // });
+  }
+});
 
+// const scrollContainer = document.getElementById('cardScroller'); //scrolling-container,
 
-scrollContainer.addEventListener('wheel', (evt) => {
-    evt.preventDefault();
-    // Prefer horizontal delta if present, otherwise use vertical delta
-    let delta = evt.deltaX !== 0 ? evt.deltaX : evt.deltaY;
-    scrollContainer.scrollLeft += delta;
-}, { passive: false });
-
-
+// scrollContainer.addEventListener('wheel', (evt) => {
+//     // Always scroll horizontally, whether the user scrolls vertically or horizontally
+//     evt.preventDefault();
+//     // If shift is held, use deltaY (for shift+wheel), otherwise use deltaY for normal wheel
+//     const scrollAmount = evt.shiftKey ? evt.deltaY : evt.deltaY;
+//     scrollContainer.scrollLeft += scrollAmount;
+// }, { passive: false });
 
 //new idea:
 //scrolling image that fades into the next one like the htmlup eventually template
