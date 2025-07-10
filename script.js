@@ -2,16 +2,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // Functions to open and close a modal
     function openModal($el) {
         $el.classList.add('is-active');
+        document.getElementById('my_buttons').classList.add('is-hidden');
     }
 
     function closeModal($el) {
         $el.classList.remove('is-active');
+        document.getElementById('my_buttons').classList.remove('is-hidden');
     }
 
     function closeAllModals() {
         (document.querySelectorAll('.modal') || []).forEach(($modal) => {
             closeModal($modal);
         });
+        document.getElementById('my_buttons').classList.remove('is-hidden');
     }
 
     // Add a click event on buttons to open a specific modal
@@ -41,61 +44,84 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// function comingsoon() {
-//     window.alert("Coming soon!")
-// }
 document.addEventListener('DOMContentLoaded', function () {
-    const container = document.querySelector('.scroll-container2');
-    const slides = container.querySelectorAll('.slidep');
-    const slideNumber = document.getElementById('slide-number');
+  document.querySelectorAll('.modal').forEach(function(modal) {
+    const container = modal.querySelector('.scroll-container2');
+    const slides = container ? container.querySelectorAll('.slidep') : [];
+    const slideNumber = container ? container.querySelector('#slide-number') : null;
+
+    if (!container || !slideNumber) return;
 
     function updateSlideNumber() {
-        let containerRect = container.getBoundingClientRect();
-        let maxVisible = 0;
-        let activeIndex = 0;
+      let containerRect = container.getBoundingClientRect();
+      let maxVisible = 0;
+      let activeIndex = 0;
 
-        slides.forEach((slide, i) => {
-            let slideRect = slide.getBoundingClientRect();
-            // Calculate horizontal overlap between slide and container
-            let visibleWidth = Math.min(slideRect.right, containerRect.right) - Math.max(slideRect.left, containerRect.left);
-            if (visibleWidth > maxVisible) {
-                maxVisible = visibleWidth;
-                activeIndex = i;
-            }
-        });
+      slides.forEach((slide, i) => {
+        let slideRect = slide.getBoundingClientRect();
+        let visibleWidth = Math.min(slideRect.right, containerRect.right) - Math.max(slideRect.left, containerRect.left);
+        if (visibleWidth > maxVisible) {
+          maxVisible = visibleWidth;
+          activeIndex = i;
+        }
+      });
 
-        slideNumber.textContent = (activeIndex + 1) + ' / ' + slides.length;
+      slideNumber.textContent = (activeIndex + 1) + ' / ' + slides.length;
     }
 
     container.addEventListener('scroll', updateSlideNumber);
     window.addEventListener('resize', updateSlideNumber);
-    updateSlideNumber(); // Initial call
+    updateSlideNumber();
+  });
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    const container = document.querySelector('.scroll-container2');
-    const slides = container.querySelectorAll('.slidep');
-    const prevBtn = container.querySelector('.prev');
-    const nextBtn = container.querySelector('.next');
+    document.querySelectorAll('.scroll-container2').forEach(function(container) {
+        const slides = container.querySelectorAll('.slidep');
+        const prevBtn = container.querySelector('.prev');
+        const nextBtn = container.querySelector('.next');
 
-    // Find the width of one image (including margin if needed)
-    function getScrollAmount() {
-        if (slides.length === 0) return 0;
-        const style = window.getComputedStyle(slides[0]);
-        const margin = parseInt(style.marginLeft) + parseInt(style.marginRight);
-        return slides[0].offsetWidth + margin;
-    }
+        function getScrollAmount() {
+            if (slides.length === 0) return 0;
+            const style = window.getComputedStyle(slides[0]);
+            const margin = parseInt(style.marginLeft) + parseInt(style.marginRight);
+            return slides[0].offsetWidth + margin;
+        }
 
-    prevBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-        container.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
-    });
+        if (prevBtn) {
+            prevBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                container.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+            });
+        }
 
-    nextBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-        container.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+        if (nextBtn) {
+            nextBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                container.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+            });
+        }
     });
 });
+
+// function comingsoon() {
+//     window.alert("Coming soon!")
+// }
+
+// function to "like" a project card and display short animation
+function card_heart(element) {
+    var icon=document.getElementById(element)
+    icon.classList.remove("fa-regular");
+    icon.classList.add("fa-solid");
+    icon.classList.add("fa-beat");
+    icon.style.color = "#990505";
+    
+    setTimeout(function () {
+        icon.classList.remove("fa-beat");
+    }, 500);
+
+    //eventually, add code to count likes 
+}
 
 /* 
 Codepen for Particle Effects:
