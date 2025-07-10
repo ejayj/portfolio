@@ -388,11 +388,19 @@ const scrollContainer = document.getElementById('cardScroller'); //scrolling-con
 // ...existing code...
 
 scrollContainer.addEventListener('wheel', (evt) => {
-    // Always scroll horizontally, whether the user scrolls vertically or horizontally
-    evt.preventDefault();
-    // Use deltaX if present (horizontal wheel or touchpad), otherwise use deltaY (vertical wheel)
-    const scrollAmount = Math.abs(evt.deltaX) > 0 ? evt.deltaX : evt.deltaY;
-    scrollContainer.scrollLeft += scrollAmount;
+    // Detect Windows platform
+    // const isWindows = navigator.platform.toLowerCase().includes('win');
+    // Only map vertical wheel events to horizontal scroll for Windows and physical mouse (not touchpad)
+    if (
+        // isWindows &&
+        Math.abs(evt.deltaY) > 0 &&
+        Math.abs(evt.deltaX) === 0 &&
+        !evt.ctrlKey // ignore pinch-zoom
+    ) {
+        evt.preventDefault();
+        scrollContainer.scrollLeft += evt.deltaY;
+    }
+    // Otherwise, let the browser handle it (touchpad, Mac, etc.)
 }, { passive: false });
 
 // ...existing code...
