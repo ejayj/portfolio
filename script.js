@@ -383,29 +383,19 @@ slider.addEventListener('mousemove', (e) => {
     slider.scrollLeft = scrollLeft - walk;
 });
 
-const container = document.getElementById("cardScroller");
-const itemToScroll = document.getElementById("scrollme");
+const scrollContainer = document.getElementById('cardScroller'); //scrolling-container,
 
-container.addEventListener("wheel", function(e) {
-  if (Math.abs(e.deltaY) > 0) {
-    e.preventDefault();
-    itemToScroll.scrollLeft +=e.deltaY;
-    
-    // itemToScroll.scrollTo({
-    //  left: itemToScroll.scrollLeft + e.deltaY,
-    // });
-  }
-});
+// ...existing code...
 
-// const scrollContainer = document.getElementById('cardScroller'); //scrolling-container,
+scrollContainer.addEventListener('wheel', (evt) => {
+    // Always scroll horizontally, whether the user scrolls vertically or horizontally
+    evt.preventDefault();
+    // Use deltaX if present (horizontal wheel or touchpad), otherwise use deltaY (vertical wheel)
+    const scrollAmount = Math.abs(evt.deltaX) > 0 ? evt.deltaX : evt.deltaY;
+    scrollContainer.scrollLeft += scrollAmount;
+}, { passive: false });
 
-// scrollContainer.addEventListener('wheel', (evt) => {
-//     // Always scroll horizontally, whether the user scrolls vertically or horizontally
-//     evt.preventDefault();
-//     // If shift is held, use deltaY (for shift+wheel), otherwise use deltaY for normal wheel
-//     const scrollAmount = evt.shiftKey ? evt.deltaY : evt.deltaY;
-//     scrollContainer.scrollLeft += scrollAmount;
-// }, { passive: false });
+// ...existing code...
 
 //new idea:
 //scrolling image that fades into the next one like the htmlup eventually template
