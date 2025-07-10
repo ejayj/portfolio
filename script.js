@@ -390,7 +390,7 @@ slider.addEventListener('mousemove', (e) => {
 //   scrollContainer.scrollLeft += evt.deltaY; // Scroll horizontally instead
 // }); //eventually add ability for trackbad to scroll naturally horizontally
 
-const container = document.querySelector('.scroll-container');
+const container = document.querySelector('.cardScroller');
 
   container.addEventListener('wheel', function (e) {
     if (e.deltaY !== 0) {
@@ -399,6 +399,7 @@ const container = document.querySelector('.scroll-container');
     }
   }, { passive: false });
 // // ...existing code...
+
 
 // scrollContainer.addEventListener('wheel', (evt) => {
 //     // Detect Windows platform
