@@ -453,6 +453,8 @@ h1.hero,
         opacity: 1;
     }
 }
+.scrolling-wrapper { cursor: grab; }
+.scrolling-wrapper.active { cursor: grabbing; }
 
 .scrolling-wrapper {
     overflow-x: auto;
@@ -466,6 +468,11 @@ h1.hero,
     /* IE and Edge */
     scrollbar-width: none;
     /* Firefox */
+    cursor: move; /* fallback if grab cursor is unsupported */
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+    user-select: none;
 
 }
 
@@ -473,6 +480,11 @@ h1.hero,
     display: none;
 }
 
+.scrolling-wrapper:active{
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+}
 
 /* Prevent horizontal overflow for the hero section */
 #section3.hero {

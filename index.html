@@ -1051,6 +1051,56 @@ set up contact thingy as disabled. get website ready first and setup php afterwa
     }
   });
 
+//** scroll wheel for mouse **//
+const scrollContainer1 = document.getElementById('cardScroller'); //scrolling-container,
+
+scrollContainer1.addEventListener('wheel', (evt) => {
+  evt.preventDefault(); // Prevent vertical scroll
+  scrollContainer1.scrollLeft += evt.deltaY; // Scroll horizontally instead
+});
+
+///** added new auto scroll functionality and stop on grab */
+const scrollContainer = document.getElementById('cardScroller');
+let autoScrollInterval;
+let isDragging = false;
+
+// Autoscroll function; todo: add drag and scroll
+function startAutoScroll() {
+  autoScrollInterval = setInterval(() => {
+    if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
+      scrollContainer.scrollLeft = 0;
+    } else {
+      scrollContainer.scrollLeft += 1;
+    }
+  }, 15);
+}
+function stopAutoScroll() {
+  clearInterval(autoScrollInterval);
+}
+
+// Start autoscroll on load
+window.addEventListener('load', startAutoScroll);
+
+// Pause autoscroll on grab (mousedown/touchstart)
+scrollContainer.addEventListener('mousedown', () => {
+  isDragging = true;
+  stopAutoScroll();
+});
+scrollContainer.addEventListener('touchstart', () => {
+  isDragging = true;
+  stopAutoScroll();
+});
+
+// Resume autoscroll on release (mouseup/touchend/mouseleave)
+['mouseup', 'mouseleave', 'touchend'].forEach(evt =>
+  scrollContainer.addEventListener(evt, () => {
+    if (isDragging) {
+      isDragging = false;
+      startAutoScroll();
+    }
+  })
+);
+
         //******************* MY NOTES****************
             //new idea:
         //scrolling image that fades into the next one like the htmlup eventually template

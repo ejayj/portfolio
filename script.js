@@ -383,84 +383,6 @@ slider.addEventListener('mousemove', (e) => {
     slider.scrollLeft = scrollLeft - walk;
 });
 
-
-//scroll horizontally with mouse wheel
-// const scrollContainer = document.getElementById('cardScroller'); //scrolling-container
-// scrollContainer.addEventListener('wheel', (e) => {
-//       e.preventDefault();
-//       container.scrollLeft += e.deltaY;
-// });
-// const scrollContainer = document.getElementById('cardScroller');
-// scrollContainer.addEventListener('wheel', (e) => {
-//     e.preventDefault();
-//     // Use deltaX for trackpads, deltaY for traditional mouse wheels
-//     scrollContainer.scrollLeft += Math.abs(e.deltaX) > 0 ? e.deltaX : e.deltaY;
-// }, { passive: false });
-
- //************* */
-// const scrollContainer = document.getElementById('cardScroller');
-// scrollContainer.addEventListener('wheel', function(e) {
-//     // Only scroll if there is horizontal or vertical wheel movement
-//     if (e.deltaX !== 0 || e.deltaY !== 0) {
-//         e.preventDefault();
-//         // Prefer horizontal scroll (trackpad), otherwise use vertical as horizontal (mouse)
-//         scrollContainer.scrollLeft += (Math.abs(e.deltaX) > Math.abs(e.deltaY)) ? e.deltaX : e.deltaY;
-//     }
-// }, { passive: false });
-
-const scrollContainer = document.getElementById('cardScroller');
-scrollContainer.addEventListener('wheel', function(e) {
-    if (e.deltaY !== 0) {
-        e.preventDefault();
-        scrollContainer.scrollLeft += e.deltaY;
-    }
-}, { passive: false });
-
-// const scrollContainer = document.getElementById('cardScroller'); //scrolling-container,
-
-// scrollContainer.addEventListener('wheel', (evt) => {
-//   evt.preventDefault(); // Prevent vertical scroll
-//   scrollContainer.scrollLeft += evt.deltaY; // Scroll horizontally instead
-// }); //eventually add ability for trackbad to scroll naturally horizontally
-
-// const container = document.querySelector('.cardScroller');
-
-//   container.addEventListener('wheel', function (e) {
-//     if (e.deltaY !== 0) {
-//       e.preventDefault();
-//       container.scrollLeft += e.deltaY;
-//     }
-//   }, { passive: false });
-// // ...existing code...
-
-
-// scrollContainer.addEventListener('wheel', (evt) => {
-//     // Detect Windows platform
-//     // const isWindows = navigator.platform.toLowerCase().includes('win');
-//     // Only map vertical wheel events to horizontal scroll for Windows and physical mouse (not touchpad)
-//     if (
-//         // isWindows &&
-//         Math.abs(evt.deltaY) > 0 &&
-//         Math.abs(evt.deltaX) === 0 &&
-//         !evt.ctrlKey // ignore pinch-zoom
-//     ) {
-//         evt.preventDefault();
-//         scrollContainer.scrollLeft += evt.deltaY;
-//     }
-//     // Otherwise, let the browser handle it (touchpad, Mac, etc.)
-// }, { passive: false });
-
-
-// scrollContainer.addEventListener('wheel', (evt) => {
-//     // Only hijack if the scroll is vertical (deltaY), not horizontal (deltaX)
-//     if (Math.abs(evt.deltaY) > Math.abs(evt.deltaX)) {
-//         evt.preventDefault();
-//         scrollContainer.scrollLeft += evt.deltaY;
-//     }
-//     // If the user is scrolling horizontally (trackpad), let the browser handle it
-// }, { passive: false });
-
-
 //new idea:
 //scrolling image that fades into the next one like the htmlup eventually template
 //buttons using css transition that enlarge as you scroll over them, or get bigger as you tap on it on iphone
@@ -482,3 +404,5 @@ scrollContainer.addEventListener('wheel', function(e) {
 
 //we are stealing the animations from them. the actually website will be founded on pop ups or
 //on click the whole page changes and background changes to a new page, with a big x to go back button on top right? or a left facing arrow
+
+//add grab and scroll functionality for 
