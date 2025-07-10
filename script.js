@@ -397,14 +397,22 @@ slider.addEventListener('mousemove', (e) => {
 //     scrollContainer.scrollLeft += Math.abs(e.deltaX) > 0 ? e.deltaX : e.deltaY;
 // }, { passive: false });
 
- 
+ //************* */
+// const scrollContainer = document.getElementById('cardScroller');
+// scrollContainer.addEventListener('wheel', function(e) {
+//     // Only scroll if there is horizontal or vertical wheel movement
+//     if (e.deltaX !== 0 || e.deltaY !== 0) {
+//         e.preventDefault();
+//         // Prefer horizontal scroll (trackpad), otherwise use vertical as horizontal (mouse)
+//         scrollContainer.scrollLeft += (Math.abs(e.deltaX) > Math.abs(e.deltaY)) ? e.deltaX : e.deltaY;
+//     }
+// }, { passive: false });
+
 const scrollContainer = document.getElementById('cardScroller');
 scrollContainer.addEventListener('wheel', function(e) {
-    // Only scroll if there is horizontal or vertical wheel movement
-    if (e.deltaX !== 0 || e.deltaY !== 0) {
+    if (e.deltaY !== 0) {
         e.preventDefault();
-        // Prefer horizontal scroll (trackpad), otherwise use vertical as horizontal (mouse)
-        scrollContainer.scrollLeft += (Math.abs(e.deltaX) > Math.abs(e.deltaY)) ? e.deltaX : e.deltaY;
+        scrollContainer.scrollLeft += e.deltaY;
     }
 }, { passive: false });
 
