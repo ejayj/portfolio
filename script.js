@@ -385,15 +385,28 @@ slider.addEventListener('mousemove', (e) => {
 
 
 //scroll horizontally with mouse wheel
-const scollContainer = document.getElementById('cardScroller'); //scrolling-container
-container.addEventListener('wheel', function (e) {
-    if (e.deltaY !== 0) {
-      e.preventDefault();
-      container.scrollLeft += e.deltaY;
-    }
-});
+// const scrollContainer = document.getElementById('cardScroller'); //scrolling-container
+// scrollContainer.addEventListener('wheel', (e) => {
+//       e.preventDefault();
+//       container.scrollLeft += e.deltaY;
+// });
+// const scrollContainer = document.getElementById('cardScroller');
+// scrollContainer.addEventListener('wheel', (e) => {
+//     e.preventDefault();
+//     // Use deltaX for trackpads, deltaY for traditional mouse wheels
+//     scrollContainer.scrollLeft += Math.abs(e.deltaX) > 0 ? e.deltaX : e.deltaY;
+// }, { passive: false });
 
  
+const scrollContainer = document.getElementById('cardScroller');
+scrollContainer.addEventListener('wheel', function(e) {
+    // Only scroll if there is horizontal or vertical wheel movement
+    if (e.deltaX !== 0 || e.deltaY !== 0) {
+        e.preventDefault();
+        // Prefer horizontal scroll (trackpad), otherwise use vertical as horizontal (mouse)
+        scrollContainer.scrollLeft += (Math.abs(e.deltaX) > Math.abs(e.deltaY)) ? e.deltaX : e.deltaY;
+    }
+}, { passive: false });
 
 // const scrollContainer = document.getElementById('cardScroller'); //scrolling-container,
 
