@@ -383,13 +383,21 @@ slider.addEventListener('mousemove', (e) => {
     slider.scrollLeft = scrollLeft - walk;
 });
 
-const scrollContainer = document.getElementById('cardScroller'); //scrolling-container,
+// const scrollContainer = document.getElementById('cardScroller'); //scrolling-container,
 
-scrollContainer.addEventListener('wheel', (evt) => {
-  evt.preventDefault(); // Prevent vertical scroll
-  scrollContainer.scrollLeft += evt.deltaY; // Scroll horizontally instead
-});
+// scrollContainer.addEventListener('wheel', (evt) => {
+//   evt.preventDefault(); // Prevent vertical scroll
+//   scrollContainer.scrollLeft += evt.deltaY; // Scroll horizontally instead
+// }); //eventually add ability for trackbad to scroll naturally horizontally
 
+const container = document.querySelector('.scroll-container');
+
+  container.addEventListener('wheel', function (e) {
+    if (e.deltaY !== 0) {
+      e.preventDefault();
+      container.scrollLeft += e.deltaY;
+    }
+  }, { passive: false });
 // // ...existing code...
 
 // scrollContainer.addEventListener('wheel', (evt) => {
