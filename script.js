@@ -349,6 +349,8 @@ function ProjectsScroll() {
     // Scroll by 3 cards
     scroller.scrollBy({ left: cardWidth * 6, behavior: 'smooth' });
 }
+
+//scrollable card scroller
 const slider = document.getElementById('cardScroller'); // Use the correct ID!
 let isDown = false;
 let startX, scrollLeft;
@@ -383,13 +385,16 @@ slider.addEventListener('mousemove', (e) => {
 
 const scrollContainer = document.getElementById('cardScroller'); //scrolling-container,
 
+
+
 scrollContainer.addEventListener('wheel', (evt) => {
-    // Always scroll horizontally, whether the user scrolls vertically or horizontally
     evt.preventDefault();
-    // If shift is held, use deltaY (for shift+wheel), otherwise use deltaY for normal wheel
-    const scrollAmount = evt.shiftKey ? evt.deltaY : evt.deltaY;
-    scrollContainer.scrollLeft += scrollAmount;
+    // Prefer horizontal delta if present, otherwise use vertical delta
+    let delta = evt.deltaX !== 0 ? evt.deltaX : evt.deltaY;
+    scrollContainer.scrollLeft += delta;
 }, { passive: false });
+
+
 
 //new idea:
 //scrolling image that fades into the next one like the htmlup eventually template
