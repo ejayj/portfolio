@@ -749,6 +749,13 @@ input[type=submit]:hover {
     }
 }
 
+@media (max-height: 600px) { /* hide scrollDown at certain height */
+
+    #scrollDown {
+        display: none;
+    }
+}
+
 /* @media (max-width: 480px) {
     #section2, #section2.container {
         overflow-x: hidden;
